@@ -1,11 +1,23 @@
 ---
 layout: default
-title: 我的Blog
+title: Welcome to Jekyll
 ---
-<h2>{{ page.title }}</h2>
-<p>最新文章</p>
-<ul>
+<ul id="posts">
 {% for post in site.posts %}
-<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+{% if post.categories contains 'software' %}
+<li class="li-sw"><a href="{{ site.baseurl }}{{ post.url }}" target="_blank">{{ post.title }}</a></li>
+{% endif %}
+{% if post.categories contains 'abc' %}
+<li class="li-abc"><a href="{{ site.baseurl }}{{ post.url }}" target="_blank">{{ post.title }}</a></li>
+{% endif %}
+{% if post.categories contains 'career' %}
+<li class="li-career"><a href="{{ site.baseurl }}{{ post.url }}" target="_blank">{{ post.title }}</a></li>
+{% endif %}
+{% if post.categories contains 'hardware' %}
+<li class="li-hw"><a href="{{ site.baseurl }}{{ post.url }}" target="_blank">{{ post.title }}</a></li>
+{% endif %}
+{% if post.categories contains 'health' %}
+<li class="li-health"><a href="{{ site.baseurl }}{{ post.url }}" target="_blank">{{ post.title }}</a></li>
+{% endif %}
 {% endfor %}
 </ul>
