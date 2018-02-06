@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 {% include head.html %}
 <body>
 	{% include header.html %}
@@ -7,9 +7,9 @@
 		<main role="main">
 			<div class="post-container">
 				{% if page.img %}
-				<img class="post-img" src={{ "images/" | prepend: site.baseurl | append : page.img}} alt="{{page.title}}">
+				<img class="post-img" src={{ "/images/" | prepend: site.baseurl | append : page.img}} alt="{{page.title}}">
 				{% endif %}
-				<div class="post-content">
+				<div class="post-content1111">
 					<article>
 						<header>
 							<h1 class="post-title">{{page.title}}</h1>
@@ -28,6 +28,5 @@
 	</div>
 	<div class="push"><div>
 	{% include footer.html %}
-	{% include javascripts.html %}
 </body>
 </html>

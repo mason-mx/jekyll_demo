@@ -1,0 +1,377 @@
+/**
+ * Site header
+ */
+.site-header {
+    max-width: 100%;
+	padding-top: 3px;
+	position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+	background: #c7edcc;
+	z-index: 0;
+    p {
+      font-size: $small-font-size;
+    }
+}
+
+.logo {
+  font-size: 10px;
+  padding-left: 3px;
+  line-height: 1;
+  margin-top: 0;
+  text-align: left;
+}
+
+/* ::: Main Navigation ::: */
+.nav-main {
+  border-bottom: 2px solid #c7c7c8;
+  border-top: 5px solid #019443;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.nav-main li {
+  border-left: 1px solid #c8c8c8;
+  display: inline-block;
+  text-align: left;
+}
+
+.nav-main li:first-child {
+  border-left: none;
+}
+
+.nav-main li:last-child a {
+  padding-right: 0;
+}
+
+.nav-main a {
+  color: #292929;
+  display: inline-block;
+  font-size: 1.125em; /* 18px/16px */
+  padding: .5em 1.15em .5em 1.4em;
+}
+
+.nav-main a:hover {
+  color: #029443;
+  text-decoration: none;
+}
+
+.nav-main .current-page,
+.nav-main .current-page:hover {
+  color: #747474;
+  cursor: default;
+}
+
+.social-sites {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 0px;
+  top: 35px;
+}
+
+.social-sites li {
+  display: inline;
+  margin-left: -1px;
+}
+
+.social-sites a {
+  color: #019443;
+  font-family: 'Social Icons', sans-serif;
+  font-size: 38px;
+  line-height: .8;
+  vertical-align: middle;
+}
+
+.social-sites a:hover {
+  color: #1162a4;
+  text-decoration: none;
+}
+
+.smallcap {
+    //text-transform: lowercase;
+    //font-variant: small-caps;
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    a,
+    a:hover {
+        text-decoration: none;
+        letter-spacing: 2px;
+        background-color: #333;
+        color: #eee;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+    }
+}
+/**
+ * Page content
+ */
+.page-content {
+    position: relative;
+    padding: $spacing-unit ($spacing-unit * 0.75);
+    margin: 1rem;
+    box-sizing: border-box;
+    max-width: $max-width;
+}
+/**
+ * Pages
+ */
+.home {
+    section + section {
+        margin-top: $spacing-unit;
+        max-width: $max-width;
+    }
+}
+
+.post-list > li {
+    margin-bottom: $spacing-unit / 4;
+    list-style-type: none;
+    margin-left: -2rem;
+
+    a,
+    a:hover {
+        color: $text-color;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    time {
+        font-size: $small-font-size;
+        color: $grey-color;
+    }
+    @include media-query($on-palm) {
+        time {
+            display: block;
+            font-size: $small-font-size;
+        }
+    }
+}
+
+.tag-title {
+    color: $link-color;
+}
+/**
+ * Posts
+ */
+.post-header {
+    margin-bottom: $spacing-unit;
+}
+
+.post-title {
+    font-size: 2rem;
+    letter-spacing: -1px;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+article header p {
+	background-color: red;
+	color: white;
+}
+
+.post-meta {
+    font-size: $small-font-size;
+    color: $grey-color;
+    a, a:visited {
+      color: $grey-color-dark;
+    }
+}
+
+.post-wrapper {
+	margin: 0 auto;
+	padding: 10px;
+	margin-top: 20px; 
+}
+
+.post-content {
+    margin-bottom: $spacing-unit;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-top: 2rem;
+    }
+
+    h1,
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    h4 {
+        font-size: 1.25rem;
+    }
+
+    h5,
+    h6 {
+        font-size: 1rem;
+    }
+}
+
+.copyright {
+  margin-top: $spacing-unit;
+  font-size: $small-font-size;
+  text-align: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  p {
+    color: $grey-color;
+    a, a:visited {
+      color: $grey-color-dark;
+    }
+  }
+}
+
+.copyright li {
+	display: inline-block;
+	margin-right: 0.2rem;
+}
+
+.copyright li a {
+	color: rgba(255, 255, 255, 0.3);
+	text-decoration: none;
+	border-bottom: 1px dotted;
+}
+
+.copyright li a:hover {
+	color: wheat;
+}
+
+.copyright li:first-child::after {
+	content: "|";
+	display: inline-block;
+	padding-left: 0.6rem;
+}
+
+.push{ padding-bottom: 50px; }
+
+.cartoon {
+	font-family: $cartoon-font-family;
+	font-size: $big-font-size;
+}
+
+#wrapper {
+	width:960px;
+	margin:0 auto;
+	margin-top: 20px; 
+	text-align:center;
+	padding-top:70px;
+}
+
+#content {
+	width:960px;
+	margin:0 auto;
+	margin-top: 110px; 
+	text-align:left;
+        display:none;
+	padding-top:50px;
+}
+
+ul#index_cards {
+	margin-top:50px;
+	text-align:center;
+}
+
+ul#index_cards li {
+	background:url(../images/card_bg.jpg) repeat;
+	height:430px;
+	width:150px;
+	display:block;
+	float:left;
+	border:1px solid #666;
+	padding:10px 10px;
+	position:relative;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-box-shadow: 2px 2px 10px #000;
+	-webkit-box-shadow: 2px 2px 10px #000;
+	-moz-transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+}
+
+#card-1 {
+	z-index:1;
+	left:40px;
+	top:40px;
+}
+
+#card-2 {
+	z-index:2;
+	left:20px;
+	top:10px;
+}
+
+#card-3 {
+	background-color:#69732B;
+	z-index:3;
+}
+
+#card-4 {
+	z-index:2;
+	right:20px;
+	top:10px;
+}
+
+#card-5 {
+	z-index:1;
+	right:40px;
+	top:40px;
+}
+
+ul#index_cards li:hover {
+	z-index:4;
+}
+
+#card-1:hover {
+	-moz-transform: scale(1.1);
+ 	-webkit-transform: scale(1.1);
+}
+
+#card-2:hover {
+	-moz-transform: scale(1.1);
+ 	-webkit-transform: scale(1.1);
+}
+
+#card-3:hover {
+	-moz-transform: scale(1.1);
+ 	-webkit-transform: scale(1.1);
+}
+
+#card-4:hover {
+	-moz-transform: scale(1.1);
+ 	-webkit-transform: scale(1.1);
+}
+
+#card-5:hover {
+	-moz-transform: scale(1.1);
+ 	-webkit-transform: scale(1.1);
+}
+
+ul#index_cards li img {
+	margin-top:6px;
+	background:#eee;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-box-shadow: 0px 0px 5px #aaa;
+	-webkit-box-shadow: 0px 0px 5px #aaa;
+}
+
+ul#index_cards li p {
+	margin-top:6px;
+	text-align:left;
+	line-height:28px;
+	font-size:1.2em;
+}
+
