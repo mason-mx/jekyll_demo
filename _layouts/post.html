@@ -14,7 +14,14 @@
 						<header>
 							<h1 class="post-title">{{page.title}}</h1>
 							{% if page.author %}
-							<p>Posted by: {{page.author}}</p>
+								<p>Posted by: {{page.author}}</p>
+							{% endif %}
+							{% if page.tags %}
+								<ul class="tags">
+								{% for tag in page.tags %}
+									<li class="tag"><a href="javascript:void()">{{ tag }}</a></li>
+								{% endfor %}
+								</ul>
 							{% endif %}
 						</header>
 						<p>{{page.content | markdownify}}</p>

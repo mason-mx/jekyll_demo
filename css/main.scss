@@ -28,6 +28,8 @@ $base-font-weight: 300;
 $small-font-size:  0.875rem;
 $big-font-size: 1.8rem;
 $base-line-height: 1.5;
+$pre-font-size: 13px;
+$pre-code-font-size: 13px;
 
 $spacing-unit:     2rem;
 $max-width:        48rem;
@@ -37,7 +39,7 @@ $background-color: #c7edcc;
 $link-color:       #0645ad;
 
 $grey-color:       #aaa;
-$grey-color-light: lighten($grey-color, 25%);
+$grey-color-light: lighten($grey-color, 90%);
 $grey-color-dark:  darken($grey-color, 25%);
 
 // Width of the content area
