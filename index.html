@@ -4,8 +4,8 @@ title: Welcome to Jekyll
 ---
 <ul id="posts">
 {% for post in site.posts %}
-{% if post.categories contains 'software' %}
-<li class="li-sw"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+{% if post.categories contains 'software' or post.categories contains 'hardware' %}
+<li class="li-ware"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
 {% endif %}
 {% if post.categories contains 'abc' %}
 <li class="li-abc"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
@@ -13,8 +13,8 @@ title: Welcome to Jekyll
 {% if post.categories contains 'career' %}
 <li class="li-career"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
 {% endif %}
-{% if post.categories contains 'hardware' %}
-<li class="li-hw"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+{% if post.categories contains 'life' %}
+<li class="li-life"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
 {% endif %}
 {% if post.categories contains 'health' %}
 <li class="li-health"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>

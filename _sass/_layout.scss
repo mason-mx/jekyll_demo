@@ -2,91 +2,90 @@
  * Site header
  */
 .site-header {
-    max-width: 100%;
+	max-width: 100%;
 	padding-top: 3px;
 	position: fixed; /* Set the navbar to fixed position */
-    top: 0; /* Position the navbar at the top of the page */
-    width: 100%; /* Full width */
+	top: 0; /* Position the navbar at the top of the page */
+	width: 100%; /* Full width */
 	background: #fff;
 	z-index: 0;
-    p {
-      font-size: $small-font-size;
-    }
+	p {
+		font-size: $small-font-size;
+	}
 }
 
 .logo {
-  font-size: 10px;
-  padding-left: 3px;
-  line-height: 1;
-  margin-top: 0;
-  text-align: left;
+	font-size: 10px;
+	padding-left: 3px;
+	line-height: 1;
+	margin-top: 0;
+	text-align: left;
 }
 
 /* ::: Main Navigation ::: */
 .nav-main {
-  border-bottom: 2px solid #c7c7c8;
-  border-top: 5px solid #019443;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+	border-bottom: 2px solid #c7c7c8;
+	border-top: 5px solid #019443;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
 }
 
 .nav-main li {
-  border-left: 1px solid #c8c8c8;
-  display: inline-block;
-  text-align: left;
+	border-left: 1px solid #c8c8c8;
+	display: inline-block;
+	text-align: left;
 }
 
 .nav-main li:first-child {
-  border-left: none;
+	border-left: none;
 }
 
 .nav-main li:last-child a {
-  padding-right: 0;
+	padding-right: 0;
 }
 
 .nav-main a {
-  color: #292929;
-  display: inline-block;
-  font-size: 1.125em; /* 18px/16px */
-  padding: .5em 1.15em .5em 1.4em;
+	color: #292929;
+	font-size: 1.125em; /* 18px/16px */
+	padding: .5em 1.15em .5em 1.4em;
 }
 
 .nav-main a:hover {
-  color: #029443;
-  text-decoration: none;
+	color: #029443;
+	text-decoration: none;
 }
 
 .nav-main .current-page,
 .nav-main .current-page:hover {
-  color: #747474;
-  cursor: default;
+	color: #747474;
+	cursor: default;
 }
 
 .social-sites {
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  right: 0px;
-  top: 35px;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	right: 0px;
+	top: 27px;
 }
 
 .social-sites li {
-  display: inline;
-  margin-left: -1px;
+	display: inline;
+	margin-left: -1px;
 }
 
 .social-sites a {
-  color: #019443;
-  font-family: 'Social Icons', sans-serif;
-  font-size: 44px;
-  line-height: .8;
-  vertical-align: middle;
+	color: #019443;
+	font-family: 'Social Icons', sans-serif;
+	font-size: 44px;
+	line-height: .8;
+	vertical-align: middle;
 }
 
 .social-sites a:hover {
-  color: #1162a4;
-  text-decoration: none;
+	color: #1162a4;
+	text-decoration: none;
 }
 
 .smallcap {
@@ -185,7 +184,7 @@ article header p {
 .post-wrapper {
 	margin: 0 auto;
 	padding: 10px;
-	margin-top: 90px; 
+	margin-top: 95px; 
 }
 
 .post-content {
@@ -295,7 +294,7 @@ article header p {
 	margin:0 auto;
 	margin-top: 20px; 
 	text-align:center;
-	padding-top:70px;
+	padding-top:95px;
 }
 
 #content {
