@@ -2,7 +2,7 @@
 layout: post
 title: Git Tricks
 description: Source control tool
-categories: software engineering
+categories: software
 tags: control
 author: Mason
 ---
