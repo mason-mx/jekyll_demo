@@ -30,6 +30,31 @@ git push origin master
 git pull
 ```
 
+## Branch
+
+```
+git checkout webnotes
+```
+
+## Merge
+
+Update a branch then switch to another one
+
+```
+git push -u origin gh-pages
+git checkout webnotes
+```
+
+Merge all commits
+```
+git merge origin/gh-pages
+```
+
+Merge a particular file, not the whole instead
+```
+git checkout gh-pages _sass/_base.scss
+```
+
 ## Push to Gerit
 
 ```
