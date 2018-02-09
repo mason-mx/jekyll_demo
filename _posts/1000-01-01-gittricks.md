@@ -72,6 +72,7 @@ git push origin HEAD:refs/for/master
 git log --diff-filter=D --summary
 git checkout <COMMIT>^ -- <file>
 ```
+![Demo](https://pic002.cnblogs.com/images/2012/26318/2012033016575974.png)
 
 > Note: the file name is Case sensitive
 

@@ -14,6 +14,8 @@ author: Mason
 
 我們來看看下面這張照片說明：
 
+![Obama](https://www.mutustar.com/wp-content/uploads/2016/01/920x920.jpg)
+
 > Democratic presidential hopeful U.S. Sen. Barack Obama, D-Ill., delivers his policy speech on Iraq Wednesday, Sept. 12, 2007, in Clinton, Iowa. Obama called for the immediate withdrawal of all U.S. combat brigades from Iraq, with the pullout being completed by the end of next year. (AP Photo/Charlie Neibergall)
 
 在上面這個例子裏：
