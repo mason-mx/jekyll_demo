@@ -3,7 +3,7 @@ layout: post
 title: Kid Educational Technologies
 description: Reading
 categories: life
-tags: Kids
+tags: Kid
 author: Mason
 ---
 
