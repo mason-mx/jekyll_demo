@@ -1,49 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-{% include head.html %}
-<body>
-	{% include header.html %}
-	<div class="post-wrapper">
-		<main role="main">
-			<div class="post-container">
-				{% if page.img %}
-				<img class="post-img" src={{ "/images/" | prepend: site.baseurl | append : page.img}} alt="{{page.title}}">
-				{% endif %}
-				{% if page.docurl %}
-				<div id="pdf">
-				    <object id="pdf_content" width="100%" height="1500px" type="application/pdf" trusted="yes" application="yes" title="Assembly" data="{{ "?#zoom=100&scrollbar=1&toolbar=1&navpanes=1" | prepend: page.docurl | prepend: site.baseurl }}">
-				    <!-- <embed src="{{ page.docurl | prepend: site.baseurl }}" width="100%" height="100%" type="application/x-pdf" trusted="yes" application="yes" title="Assembly">
-				    </embed> -->
-				    <p>System Error - This PDF cannot be displayed, please contact the author.</p>
-				    </object>
-				</div>
-				{% else %}
-				<div class="post-content">
-					<article>
-						<header>
-							<h1 class="post-title">{{page.title}}</h1>
-							{% if page.author %}
-								<p>Posted by: {{page.author}}</p>
-							{% endif %}
-							{% if page.tags %}
-								<ul class="tags">
-								{% for tag in page.tags %}
-									<li class="tag"><a href="javascript:void()">{{ tag }}</a></li>
-								{% endfor %}
-								</ul>
-							{% endif %}
-						</header>
-						<p>{{page.content | markdownify}}</p>
-					</article>
-					{% include share.html %}
-					{% include disqus.html %}
-					{% include txtpen.html %}
-				</div>
-				{% endif %}
+---
+layout: default
+---
+<div class="post-wrapper">
+	<main role="main">
+		<div class="post-container">
+			{% if page.img %}
+			<img class="post-img" src={{ "/images/" | prepend: site.baseurl | append : page.img}} alt="{{page.title}}">
+			{% endif %}
+			{% if page.docurl %}
+			<div id="pdf">
+			    <object id="pdf_content" width="100%" height="1500px" type="application/pdf" trusted="yes" application="yes" title="Assembly" data="{{ "?#zoom=100&scrollbar=1&toolbar=1&navpanes=1" | prepend: page.docurl | prepend: site.baseurl }}">
+			    <!-- <embed src="{{ page.docurl | prepend: site.baseurl }}" width="100%" height="100%" type="application/x-pdf" trusted="yes" application="yes" title="Assembly">
+			    </embed> -->
+			    <p>System Error - This PDF cannot be displayed, please contact the author.</p>
+			    </object>
 			</div>
-		</main>
-	</div>
-	<div class="push"><div>
-	{% include footer.html %}
-</body>
-</html>
+			{% else %}
+			<div class="post-content">
+				<article>
+					<header>
+						<h1 class="post-title">{{page.title}}</h1>
+						{% if page.author %}
+							<p>Posted by: {{page.author}}</p>
+						{% endif %}
+						{% if page.tags %}
+							<ul class="tags">
+							{% for tag in page.tags %}
+								<li class="tag"><a href="{{ site.baseurl }}/tagged#{{ tag | slugify }}"># {{ tag }}</a></li>
+							{% endfor %}
+							</ul>
+						{% endif %}
+					</header>
+					<p>{{page.content | markdownify}}</p>
+				</article>
+				{% include share.html %}
+				{% include disqus.html %}
+				{% include txtpen.html %}
+			</div>
+			{% endif %}
+		</div>
+	</main>
+</div>

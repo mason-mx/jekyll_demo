@@ -1,26 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-{% include head.html %}
-<body>
-	{% include header.html %}
-	<div class="post-wrapper">
-		<main role="main">
-			<div class="post-container">
-				{% if page.img %}
-				<img class="post-img" src={{ "/images/" | prepend: site.baseurl | append : page.img}} alt="{{page.title}}">
-				{% endif %}
-				<div class="post-content">
-					<article>
-						<header>
-							<h1 class="post-title">{{page.title}}</h1>
-						</header>
-						<p>{{page.content | markdownify}}</p>
-					</article>
-				</div>
+---
+layout: default
+---
+<div class="post-wrapper">
+	<main role="main">
+		<div class="post-container">
+			{% if page.img %}
+			<img class="post-img" src={{ "/images/" | prepend: site.baseurl | append : page.img}} alt="{{page.title}}">
+			{% endif %}
+			<div class="post-content">
+				<article>
+					<header>
+						<h1 class="post-title">{{page.title}}</h1>
+					</header>
+					<p>{{page.content | markdownify}}</p>
+				</article>
 			</div>
-		</main>
-	</div>
-	<div class="push"><div>
-	{% include footer.html %}
-</body>
-</html>
+		</div>
+	</main>
+</div>
