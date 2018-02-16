@@ -324,13 +324,13 @@ ul#index_cards {
 	margin-top:50px;
 	text-align:center;
 	@include media-query($on-palm-portrait) {
-		margin-top:150px;
+		margin-top:100px;
 	}
 	@include media-query($on-pad-portrait) {
-		margin-top:230px;
+		margin-top:180px;
 	}
 	@include media-query($on-pad-landscape) {
-		margin-top:75px;
+		margin-top:25px;
 	}
 }
 
@@ -342,7 +342,7 @@ ul#index_cards li {
 		width:100px;
 	}
 	@include media-query($on-pad-portrait) {
-		width:130px;
+		width:120px;
 	}
 	display:block;
 	float:left;
