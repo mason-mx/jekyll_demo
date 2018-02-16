@@ -291,6 +291,12 @@ article header p {
 
 #wrapper {
 	width:860px;
+	@include media-query($on-palm-portrait) {
+		width:$on-palm-portrait;
+	}
+	@include media-query($on-pad-portrait) {
+		width:$on-pad-portrait;
+	}
 	margin:0 auto;
 	margin-top: 95px; 
 	text-align:center;
@@ -299,6 +305,12 @@ article header p {
 
 #content {
 	width:960px;
+	@include media-query($on-palm-portrait) {
+		width:$on-palm-portrait;
+	}
+	@include media-query($on-pad-portrait) {
+		width:$on-pad-portrait;
+	}
 	margin:0 auto;
 	margin-top: 95px; 
 	text-align:left;
@@ -311,15 +323,27 @@ ul#index_cards {
     	padding: 0;
 	margin-top:50px;
 	text-align:center;
-	@include media-query($on-pad) {
-		margin-top:5px;
-    	}
+	@include media-query($on-palm-portrait) {
+		margin-top:150px;
+	}
+	@include media-query($on-pad-portrait) {
+		margin-top:230px;
+	}
+	@include media-query($on-pad-landscape) {
+		margin-top:75px;
+	}
 }
 
 ul#index_cards li {
 	background:url(../images/card_bg.jpg) repeat;
 	height:400px;
 	width:150px;
+	@include media-query($on-palm-portrait) {
+		width:100px;
+	}
+	@include media-query($on-pad-portrait) {
+		width:130px;
+	}
 	display:block;
 	float:left;
 	border:1px solid #666;

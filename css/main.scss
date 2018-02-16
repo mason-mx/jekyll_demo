@@ -43,8 +43,9 @@ $grey-color-light: lighten($grey-color, 90%);
 $grey-color-dark:  darken($grey-color, 60%);
 
 // Width of the content area
-$on-palm:             600px;
-$on-pad:              800px;
+$on-palm-portrait:	640px;
+$on-pad-portrait:	750px;
+$on-pad-landscape:	1024px;
 
 // Use media queries like this:
 // @include media-query($on-palm) {
