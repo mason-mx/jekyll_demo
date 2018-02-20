@@ -330,16 +330,16 @@ ul#index_cards {
 	margin-top:80px;
 	text-align:center;
 	@include media-query($on-pad-landscape) {
-		margin-top:55px;
-	}
-	@include media-query($on-palm-landscape) {
 		margin-top:25px;
 	}
+	@include media-query($on-palm-landscape) {
+		margin-top:15px;
+	}
 	@include media-query($on-pad-portrait) {
-		margin-top:180px;
+		margin-top:150px;
 	}
 	@include media-query($on-palm-portrait) {
-		margin-top:120px;
+		margin-top:90px;
 	}
 }
 
