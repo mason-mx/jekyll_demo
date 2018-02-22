@@ -66,13 +66,13 @@ git checkout -b dev-br1 -t origin/dev-br1
 git push origin HEAD:refs/for/master
 ```
 
-## Reset one or more commit
+## Reset one or more commits
 
 ```
 git reset --hard HEAD~1
 ```
 
-Be cautious about doing this, all your changes will be abandoned. So, please backup useful files at first.
+Be cautious about doing this, since all your changes will be abandoned. So, please backup useful files in advance.
 
 ## Restore Deleted Files In Git
 
