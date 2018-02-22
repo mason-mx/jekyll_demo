@@ -235,8 +235,6 @@ article header p {
 	border-right: 1px solid transparent;
 }
 
-
-
 .tag:hover {
 	background-color: crimson;
 	color: white;
@@ -244,6 +242,10 @@ article header p {
 
 .tag:hover::after {
 	border-left-color: crimson; 
+}
+
+.post-photo-full {
+	max-width: 100%;
 }
 
 .copyright {
