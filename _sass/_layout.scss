@@ -142,7 +142,7 @@
         font-size: $small-font-size;
         color: $grey-color;
     }
-    @include media-query($on-palm) {
+    @include media-query($on-palm-portrait) {
         time {
             display: block;
             font-size: $small-font-size;
@@ -235,8 +235,6 @@ article header p {
 	border-right: 1px solid transparent;
 }
 
-
-
 .tag:hover {
 	background-color: crimson;
 	color: white;
@@ -244,6 +242,10 @@ article header p {
 
 .tag:hover::after {
 	border-left-color: crimson; 
+}
+
+.post-photo-full {
+	max-width: 100%;
 }
 
 .copyright {
@@ -287,34 +289,72 @@ article header p {
 .cartoon {
 	font-family: $cartoon-font-family;
 	font-size: $big-font-size;
+	@include media-query($on-pad-portrait) {
+		font-size: 1.6rem;
+	}
+	@include media-query($on-palm-portrait) {
+		font-size: 1.4rem;
+	}
 }
 
 #wrapper {
-	width:960px;
+	width:860px;
+	@include media-query($on-pad-portrait) {
+		width:$on-pad-portrait;
+	}
+	@include media-query($on-palm-portrait) {
+		width:$on-palm-portrait;
+	}
 	margin:0 auto;
-	margin-top: 20px; 
+	margin-top: 95px; 
 	text-align:center;
-	padding-top:95px;
+	padding-top:10px;
 }
 
 #content {
 	width:960px;
+	@include media-query($on-pad-portrait) {
+		width:$on-pad-portrait;
+	}
+	@include media-query($on-palm-portrait) {
+		width:$on-palm-portrait;
+	}
 	margin:0 auto;
-	margin-top: 110px; 
+	margin-top: 95px; 
 	text-align:left;
         display:none;
-	padding-top:50px;
+	padding-top:10px;
 }
 
 ul#index_cards {
-	margin-top:50px;
+	margin: 0;
+    	padding: 0;
+	margin-top:80px;
 	text-align:center;
+	@include media-query($on-pad-landscape) {
+		margin-top:25px;
+	}
+	@include media-query($on-palm-landscape) {
+		margin-top:15px;
+	}
+	@include media-query($on-pad-portrait) {
+		margin-top:150px;
+	}
+	@include media-query($on-palm-portrait) {
+		margin-top:90px;
+	}
 }
 
 ul#index_cards li {
 	background:url(../images/card_bg.jpg) repeat;
-	height:430px;
+	height:400px;
 	width:150px;
+	@include media-query($on-pad-portrait) {
+		width:130px;
+	}
+	@include media-query($on-palm-portrait) {
+		width:105px;
+	}
 	display:block;
 	float:left;
 	border:1px solid #666;
@@ -400,5 +440,13 @@ ul#index_cards li p {
 	text-align:left;
 	line-height:28px;
 	font-size:1.2em;
+	@include media-query($on-pad-portrait) {
+		margin-top:8px;
+		font-size:1.0em;
+	}
+	@include media-query($on-palm-portrait) {
+		margin-top:15px;
+		font-size:0.9em;
+	}
 }
 
