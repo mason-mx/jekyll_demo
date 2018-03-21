@@ -33,9 +33,10 @@ chown -R your_username:your_group folder
 
 ```
 :%s/foo/bar/g
+:6,10s/foo/bar/g
 ```
 
-Find each occurrence of `foo` (in all lines) and replace it with `bar`
+Find each occurrence of `foo` (in all lines or from line 6 to line 10) and replace it with `bar`
 
 ### grep
 
