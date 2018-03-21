@@ -29,11 +29,19 @@ chmod +x myshell.sh
 chown yangzongde testfile //修改文件拥有者为 yangzongde
 chown -R your_username:your_group folder
 ```
+### Find and replace strings in vim on multiple lines
+
+```
+:%s/foo/bar/g
+```
+
+Find each occurrence of `foo` (in all lines) and replace it with `bar`
 
 ### grep
-grep man * 会匹配 ‘Batman’、‘manic’、‘man’等，
-grep \'<man\' * 匹配‘manic’和‘man’，但不是‘Batman’，
-grep \'<man>\' 只匹配‘man’，而不是‘Batman’或‘manic’等其他的字符串。
+
+`grep man * `会匹配 ‘Batman’、‘manic’、‘man’等，
+`grep \'<man\' * `匹配‘manic’和‘man’，但不是‘Batman’，
+`grep \'<man>\' `只匹配‘man’，而不是‘Batman’或‘manic’等其他的字符串。
 
 ### Find file
 
