@@ -45,7 +45,7 @@ systemctl restart networking.service
 
 ### CentOS
 
-Refer to [Configure Static IP Address in CentOS](http://www.mustbegeek.com/configure-static-ip-address-in-centos/)
+Refer to [Configure Static IP Address in CentOS](http://www.mustbegeek.com/configure-static-ip-address-in-centos/) and [CentOS IP/DNS setting](https://blog.csdn.net/iamfafa/article/details/6209009)
 
 Modify the file named /etc/sysconfig/network-scripts/ifcfg-eth0 as follows:
 

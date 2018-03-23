@@ -57,6 +57,12 @@ find ./ -mtime 1 ： 返回的是前48~24小时修改过的文件。而不是48�
 那怎么返回10天内修改过的文件？find还可以支持表达式关系运算，所以可以把最近几天的数据一天天的加起来：
 $ find ./ -mtime 0 -o -mtime 1 -o -mtime 2 ……虽然比较土，但也算是个方法了。
 
+to exclude a specific file in fine
+
+```
+find $1 -name 'index.html' -prune -o -type f -name '*.htm' -print
+```
+
 ## Coding
 
 ### GCC
