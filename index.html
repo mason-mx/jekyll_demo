@@ -63,7 +63,8 @@ title: Welcome to Jekyll
 </div>
 <div id="content">
 <ul id="posts">
-	{% for post in site.posts %}
+	{% assign sortedPosts = site.posts | sort: 'title' %}
+	{% for post in sortedPosts %}
 	{% if post.categories contains 'software' or post.categories contains 'hardware' %}
 	<li class="li-ware"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
 	{% endif %}
