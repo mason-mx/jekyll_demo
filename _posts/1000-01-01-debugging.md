@@ -3,7 +3,7 @@ layout: post
 title: Coding and Debugging Tricks
 description: Debugging
 categories: software
-tags: Programming
+tags: programming
 author: Mason
 ---
 

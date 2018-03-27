@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Connect everything
+title: Networking
 description: 
 categories: software
-tags: Networking
+tags: system
 author: Mason
 ---
 

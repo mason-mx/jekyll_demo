@@ -3,7 +3,7 @@ layout: post
 title: Concepts in Software Industry
 description: Understanding
 categories: software
-tags: Definition
+tags: definition
 author: Mason
 ---
 
