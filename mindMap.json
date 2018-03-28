@@ -1,0 +1,128 @@
+---
+---
+{% assign tech-y = 0 %}
+{% assign tech-c = 0 %}
+{% assign tw-c = 0 %}
+{% assign tdd-c = 0 %}
+{% assign tc-c = 0 %}
+{% assign tb-c = 0 %}
+{% assign ta-c = 0 %}
+{% assign td-c = 0 %}
+
+{% assign hw-y = 0 %}
+{% assign code-y = 0 %}
+{% assign define-y = 0 %}
+{% assign sys-y = 0 %}
+{% assign sw-y = 0 %}
+{% assign plat-y = 0 %}
+
+{% assign hw-c = 0 %}
+{% assign code-c = 0 %}
+{% assign define-c = 0 %}
+{% assign sys-c = 0 %}
+{% assign sw-c = 0 %}
+{% assign plat-c = 0 %}
+
+{% assign sortedPosts = site.posts | sort: 'title' %}
+{% for post in sortedPosts %}
+{% if post.tags %}
+{% for tag in post.tags %}
+{% case tag %}
+{% when 'hardware' %}
+{% assign hw-c = hw-c | plus: 1 %}
+{% when 'programming' %}
+{% assign code-c = code-c | plus: 1 %}
+{% when 'definition' %}
+{% assign define-c = define-c | plus: 1 %}
+{% when 'system' %}
+{% assign sys-c = sys-c | plus: 1 %}
+{% when 'software-usage' %}
+{% assign sw-c = sw-c | plus: 1 %}
+{% when 'platform' %}
+{% assign plat-c = plat-c | plus: 1 %}
+{% endcase %}
+{% endfor %}
+{% endif %}
+{% endfor %}
+
+{% assign tech-c = tech-c | plus: hw-c %}
+{% assign tech-c = tech-c | plus: code-c %}
+{% assign tech-c = tech-c | plus: define-c %}
+{% assign tech-c = tech-c | plus: sys-c %}
+{% assign tech-c = tech-c | plus: sw-c %}
+{% assign tech-c = tech-c | plus: plat-c %}
+
+{% assign tech-y = tech-c | times: -10 %}
+{% assign hw-top = tech-c | times: -20 %}
+{% assign offset = hw-c | divided_by: 2 | times: 20 %}
+{% assign hw-y = hw-top | plus: offset %}
+{% assign code-top = tech-c | minus: hw-c | times: -20 %}
+{% assign offset = code-c | divided_by: 2 | times: 20 %}
+{% assign code-y = code-top | plus: offset %}
+{% assign define-top = tech-c | minus: hw-c | minus: code-c | times: -20 %}
+{% assign offset = define-c | divided_by: 2 | times: 20 %}
+{% assign define-y = define-top | plus: offset %}
+{% assign sys-top = tech-c | minus: hw-c | minus: code-c | minus: define-c | times: -20 %}
+{% assign offset = sys-c | divided_by: 2 | times: 20 %}
+{% assign sys-y = sys-top | plus: offset %}
+{% assign sw-top = tech-c | minus: hw-c | minus: code-c | minus: define-c | minus: sys-c | times: -20 %}
+{% assign offset = sw-c | divided_by: 2 | times: 20 %}
+{% assign sw-y = sw-top | plus: offset %}
+{% assign plat-top = tech-c | minus: hw-c | minus: code-c | minus: define-c | minus: sys-c | minus: sw-c | times: -20 %}
+{% assign offset = plat-c | divided_by: 2 | times: 20 %}
+{% assign plat-y = plat-top | plus: offset %}
+{ "class": "go.TreeModel",
+  "nodeDataArray": [
+{"key":100000, "text":"Mind Map", "loc":"0 0"},
+{"key":10000, "parent":100000, "text":"Engineering", "url":"", "brush":"skyblue", "dir":"right", "loc":"90 {{ tech-y }}"},
+{"key":10001, "parent":10000, "text":"harware", "url":"", "brush":"skyblue", "dir":"right", "loc":"200 {{ hw-y }}"},
+{"key":10002, "parent":10000, "text":"programming", "url":"", "brush":"skyblue", "dir":"right", "loc":"200 {{ code-y }}"},
+{"key":10003, "parent":10000, "text":"definition", "url":"", "brush":"skyblue", "dir":"right", "loc":"200 {{ define-y }}"},
+{"key":10004, "parent":10000, "text":"system", "url":"", "brush":"skyblue", "dir":"right", "loc":"200 {{ sys-y }}"},
+{"key":10005, "parent":10000, "text":"software usage", "url":"", "brush":"skyblue", "dir":"right", "loc":"200 {{ sw-y }}"},
+{"key":10006, "parent":10000, "text":"platform", "url":"", "brush":"skyblue", "dir":"right", "loc":"200 {{ plat-y }}"},
+{% assign hw = 0 %}
+{% assign code = 0 %}
+{% assign define = 0 %}
+{% assign sys = 0 %}
+{% assign sw = 0 %}
+{% assign plat = 0 %}
+{% assign sortedPosts = site.posts | sort: 'title' %}
+{% for post in sortedPosts %}
+{% if post.tags %}
+{% for tag in post.tags %}
+{% case tag %}
+{% when 'hardware' %}
+{% assign hw-step = hw | times: 20 %}
+{"key":{% increment var %}, "parent":10001, "text": "{{ post.title }}", "url":"{{ site.baseurl }}{{ post.url }}", "brush":"skyblue", "dir":"right", "loc":"260 {{ hw-top | plus: hw-step }}"},
+{% assign hw = hw | plus: 1 %}
+{% when 'programming' %}
+{% assign code-step = code | times: 20 %}
+{"key":{% increment var %}, "parent":10002, "text": "{{ post.title }}", "url":"{{ site.baseurl }}{{ post.url }}", "brush":"skyblue", "dir":"right", "loc":"320 {{ code-top | plus: code-step }}"},
+{% assign code = code | plus: 1 %}
+{% when 'definition' %}
+{% assign define-step = define | times: 20 %}
+{"key":{% increment var %}, "parent":10003, "text": "{{ post.title }}", "url":"{{ site.baseurl }}{{ post.url }}", "brush":"skyblue", "dir":"right", "loc":"260 {{ define-top | plus: define-step }}"},
+{% assign define = define | plus: 1 %}
+{% when 'system' %}
+{% assign sys-step = sys | times: 20 %}
+{"key":{% increment var %}, "parent":10004, "text": "{{ post.title }}", "url":"{{ site.baseurl }}{{ post.url }}", "brush":"skyblue", "dir":"right", "loc":"260 {{ sys-top | plus: sys-step }}"},
+{% assign sys = sys | plus: 1 %}
+{% when 'software-usage' %}
+{% assign sw-step = sw | times: 20 %}
+{"key":{% increment var %}, "parent":10005, "text": "{{ post.title }}", "url":"{{ site.baseurl }}{{ post.url }}", "brush":"skyblue", "dir":"right", "loc":"320 {{ sw-top | plus: sw-step }}"},
+{% assign sw = sw | plus: 1 %}
+{% when 'platform' %}
+{% assign plat-step = plat | times: 20 %}
+{"key":{% increment var %}, "parent":10006, "text": "{{ post.title }}", "url":"{{ site.baseurl }}{{ post.url }}", "brush":"skyblue", "dir":"right", "loc":"260 {{ plat-top | plus: plat-step }}"},
+{% assign plat = plat | plus: 1 %}
+{% endcase %}
+{% endfor %}
+{% endif %}
+{% endfor %}
+{"key":100, "parent":100000, "text":"English learning", "brush":"darkseagreen", "dir":"right", "loc":"85 78.75"},
+{"key":100, "parent":100000, "text":"Career", "brush":"red", "dir":"left", "loc":"-98 -100"},
+{"key":100, "parent":100000, "text":"Daily life", "brush":"palevioletred", "dir":"left", "loc":"-98 0"},
+{"key":100, "parent":100000, "text":"Health", "brush":"coral", "dir":"left", "loc":"-98 78.75"}
+ ]
+}
