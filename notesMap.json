@@ -1,13 +1,16 @@
 ---
 ---
 {% assign tech-y = 0 %}
+{% assign en-y = 0 %}
+{% assign career-y = 0 %}
+{% assign life-y = 0 %}
+{% assign health-y = 0 %}
+
 {% assign tech-c = 0 %}
-{% assign tw-c = 0 %}
-{% assign tdd-c = 0 %}
-{% assign tc-c = 0 %}
-{% assign tb-c = 0 %}
-{% assign ta-c = 0 %}
-{% assign td-c = 0 %}
+{% assign en-c = 0 %}
+{% assign career-c = 0 %}
+{% assign life-c = 0 %}
+{% assign health-c = 0 %}
 
 {% assign hw-y = 0 %}
 {% assign code-y = 0 %}
@@ -22,6 +25,16 @@
 {% assign sys-c = 0 %}
 {% assign sw-c = 0 %}
 {% assign plat-c = 0 %}
+
+{% assign listen-y = 0 %}
+{% assign speak-y = 0 %}
+{% assign read-y = 0 %}
+{% assign write-y = 0 %}
+
+{% assign listen-c = 0 %}
+{% assign speak-c = 0 %}
+{% assign read-c = 0 %}
+{% assign write-c = 0 %}
 
 {% assign sortedPosts = site.posts | sort: 'title' %}
 {% for post in sortedPosts %}
@@ -40,19 +53,35 @@
 {% assign sw-c = sw-c | plus: 1 %}
 {% when 'platform' %}
 {% assign plat-c = plat-c | plus: 1 %}
+{% when 'listening' %}
+{% assign listen-c = listen-c | plus: 1 %}
+{% when 'speaking' %}
+{% assign speak-c = speak-c | plus: 1 %}
+{% when 'reading' %}
+{% assign read-c = read-c | plus: 1 %}
+{% when 'writing' %}
+{% assign write-c = w-c | plus: 1 %}
 {% endcase %}
 {% endfor %}
 {% endif %}
 {% endfor %}
 
-{% assign tech-c = tech-c | plus: hw-c %}
-{% assign tech-c = tech-c | plus: code-c %}
-{% assign tech-c = tech-c | plus: define-c %}
-{% assign tech-c = tech-c | plus: sys-c %}
-{% assign tech-c = tech-c | plus: sw-c %}
-{% assign tech-c = tech-c | plus: plat-c %}
+{% assign tech-c = tech-c | plus: hw-c | plus: code-c | plus: define-c | plus: sys-c | plus: sw-c | plus: plat-c %}
+{% assign en-c = en-c | plus: listen-c | plus: speak-c | plus: read-c | plus: write-c %}
+{% assign career-c = career-c | plus: hw-c | plus: code-c | plus: define-c | plus: sys-c | plus: sw-c | plus: plat-c %}
+{% assign life-c = life-c | plus: hw-c | plus: code-c | plus: define-c | plus: sys-c | plus: sw-c | plus: plat-c %}
+{% assign health-c = health-c | plus: hw-c | plus: code-c | plus: define-c | plus: sys-c | plus: sw-c | plus: plat-c %}
 
 {% assign tech-y = tech-c | times: -10 %}
+{% assign en-y = en-c | times: 10 %}
+{% assign career-y = career-c | times: -10 %}
+{% assign life-y = 0 %}
+{% assign health-y = health-c | times: -10 %}
+{ "class": "go.TreeModel",
+  "nodeDataArray": [
+{"key":100000, "text":"Notes Map", "loc":"0 0"},
+{"key":10000, "parent":100000, "text":"Engineering", "url":"", "brush":"skyblue", "dir":"right", "loc":"90 {{ tech-y }}"},
+{"key":20000, "parent":100000, "text":"English learning", "brush":"darkseagreen", "dir":"right", "loc":"90 {{ en-y }}"},
 {% assign hw-top = tech-c | times: -20 %}
 {% assign offset = hw-c | divided_by: 2 | times: 20 %}
 {% assign hw-y = hw-top | plus: offset %}
@@ -71,16 +100,28 @@
 {% assign plat-top = tech-c | minus: hw-c | minus: code-c | minus: define-c | minus: sys-c | minus: sw-c | times: -20 %}
 {% assign offset = plat-c | divided_by: 2 | times: 20 %}
 {% assign plat-y = plat-top | plus: offset %}
-{ "class": "go.TreeModel",
-  "nodeDataArray": [
-{"key":100000, "text":"Mind Map", "loc":"0 0"},
-{"key":10000, "parent":100000, "text":"Engineering", "url":"", "brush":"skyblue", "dir":"right", "loc":"90 {{ tech-y }}"},
 {"key":10001, "parent":10000, "text":"harware", "url":"", "brush":"skyblue", "dir":"right", "loc":"200 {{ hw-y }}"},
 {"key":10002, "parent":10000, "text":"programming", "url":"", "brush":"skyblue", "dir":"right", "loc":"200 {{ code-y }}"},
 {"key":10003, "parent":10000, "text":"definition", "url":"", "brush":"skyblue", "dir":"right", "loc":"200 {{ define-y }}"},
 {"key":10004, "parent":10000, "text":"system", "url":"", "brush":"skyblue", "dir":"right", "loc":"200 {{ sys-y }}"},
 {"key":10005, "parent":10000, "text":"software usage", "url":"", "brush":"skyblue", "dir":"right", "loc":"200 {{ sw-y }}"},
 {"key":10006, "parent":10000, "text":"platform", "url":"", "brush":"skyblue", "dir":"right", "loc":"200 {{ plat-y }}"},
+{% assign listen-top = 0 %}
+{% assign offset = listen-c | divided_by: 2 | times: 20 %}
+{% assign listen-y = listen-top | plus: offset %}
+{% assign speak-top = listen-c | times: 20 %}
+{% assign offset = speak-c | divided_by: 2 | times: 20 %}
+{% assign speak-y = speak-top | plus: offset %}
+{% assign read-top = listen-c | plus: speak-c | times: 20 %}
+{% assign offset = read-c | divided_by: 2 | times: 20 %}
+{% assign read-y = read-top | plus: offset %}
+{% assign write-top = listen-c | plus: speak-c | plus: read-c | times: 20 %}
+{% assign offset = write-c | divided_by: 2 | times: 20 %}
+{% assign write-y = write-top | plus: offset %}
+{"key":20001, "parent":20000, "text":"listening", "url":"", "brush":"darkseagreen", "dir":"right", "loc":"200 {{ listen-y }}"},
+{"key":20002, "parent":20000, "text":"speaking", "url":"", "brush":"darkseagreen", "dir":"right", "loc":"200 {{ speak-y }}"},
+{"key":20003, "parent":20000, "text":"reading", "url":"", "brush":"darkseagreen", "dir":"right", "loc":"200 {{ read-y }}"},
+{"key":20004, "parent":20000, "text":"writing", "url":"", "brush":"darkseagreen", "dir":"right", "loc":"200 {{ write-y }}"},
 {% assign hw = 0 %}
 {% assign code = 0 %}
 {% assign define = 0 %}
@@ -120,7 +161,6 @@
 {% endfor %}
 {% endif %}
 {% endfor %}
-{"key":100, "parent":100000, "text":"English learning", "brush":"darkseagreen", "dir":"right", "loc":"85 78.75"},
 {"key":100, "parent":100000, "text":"Career", "brush":"red", "dir":"left", "loc":"-98 -100"},
 {"key":100, "parent":100000, "text":"Daily life", "brush":"palevioletred", "dir":"left", "loc":"-98 0"},
 {"key":100, "parent":100000, "text":"Health", "brush":"coral", "dir":"left", "loc":"-98 78.75"}

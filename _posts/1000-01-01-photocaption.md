@@ -2,7 +2,7 @@
 layout: post
 title: Tips for Photo Caption
 categories: abc
-tags: Writing
+tags: writing
 author: Mason
 ---
 
