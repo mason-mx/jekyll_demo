@@ -36,6 +36,30 @@
 {% assign read-c = 0 %}
 {% assign write-c = 0 %}
 
+{% assign family-y = 0 %}
+{% assign finance-y = 0 %}
+{% assign chores-y = 0 %}
+{% assign insight-y = 0 %}
+
+{% assign family-c = 0 %}
+{% assign finance-c = 0 %}
+{% assign chores-c = 0 %}
+{% assign insight-c = 0 %}
+
+{% assign bio-y = 0 %}
+{% assign cv-y = 0 %}
+{% assign employer-y = 0 %}
+
+{% assign bio-c = 0 %}
+{% assign cv-c = 0 %}
+{% assign employer-c = 0 %}
+
+{% assign well-y = 0 %}
+{% assign exercise-y = 0 %}
+
+{% assign well-c = 0 %}
+{% assign exercise-c = 0 %}
+
 {% assign sortedPosts = site.posts | sort: 'title' %}
 {% for post in sortedPosts %}
 {% if post.tags %}
@@ -60,7 +84,25 @@
 {% when 'reading' %}
 {% assign read-c = read-c | plus: 1 %}
 {% when 'writing' %}
-{% assign write-c = w-c | plus: 1 %}
+{% assign write-c = write-c | plus: 1 %}
+{% when 'family' %}
+{% assign family-c = family-c | plus: 1 %}
+{% when 'finance' %}
+{% assign finance-c = finance-c | plus: 1 %}
+{% when 'chores' %}
+{% assign chores-c = chores-c | plus: 1 %}
+{% when 'insight' %}
+{% assign insight-c = insight-c | plus: 1 %}
+{% when 'bio' %}
+{% assign bio-c = bio-c | plus: 1 %}
+{% when 'cv' %}
+{% assign cv-c = cv-c | plus: 1 %}
+{% when 'employer' %}
+{% assign employer-c = employer-c | plus: 1 %}
+{% when 'wellness' %}
+{% assign well-c = well-c | plus: 1 %}
+{% when 'exercise' %}
+{% assign exercise-c = exercise-c | plus: 1 %}
 {% endcase %}
 {% endfor %}
 {% endif %}
@@ -68,20 +110,19 @@
 
 {% assign tech-c = tech-c | plus: hw-c | plus: code-c | plus: define-c | plus: sys-c | plus: sw-c | plus: plat-c %}
 {% assign en-c = en-c | plus: listen-c | plus: speak-c | plus: read-c | plus: write-c %}
-{% assign career-c = career-c | plus: hw-c | plus: code-c | plus: define-c | plus: sys-c | plus: sw-c | plus: plat-c %}
-{% assign life-c = life-c | plus: hw-c | plus: code-c | plus: define-c | plus: sys-c | plus: sw-c | plus: plat-c %}
-{% assign health-c = health-c | plus: hw-c | plus: code-c | plus: define-c | plus: sys-c | plus: sw-c | plus: plat-c %}
+{% assign career-c = bio-c | plus: cv-c | plus: employer-c %}
+{% assign life-c = family-c | plus: finance-c | plus: chores-c | plus: insight-c %}
+{% assign health-c = well-c | plus: exercise-c %}
 
 {% assign tech-y = tech-c | times: -10 %}
 {% assign en-y = en-c | times: 10 %}
-{% assign career-y = career-c | times: -10 %}
 {% assign life-y = 0 %}
-{% assign health-y = health-c | times: -10 %}
 { "class": "go.TreeModel",
   "nodeDataArray": [
-{"key":100000, "text":"Notes Map", "loc":"0 0"},
+{"key":100000, "text":"Notes Map", "url":"{{ site.baseurl }}/", "loc":"0 0"},
 {"key":10000, "parent":100000, "text":"Engineering", "url":"", "brush":"skyblue", "dir":"right", "loc":"90 {{ tech-y }}"},
 {"key":20000, "parent":100000, "text":"English learning", "brush":"darkseagreen", "dir":"right", "loc":"90 {{ en-y }}"},
+{"key":30000, "parent":100000, "text":"Daily life", "brush":"palevioletred", "dir":"left", "loc":"-20 {{ life-y }}"},
 {% assign hw-top = tech-c | times: -20 %}
 {% assign offset = hw-c | divided_by: 2 | times: 20 %}
 {% assign hw-y = hw-top | plus: offset %}
@@ -100,12 +141,12 @@
 {% assign plat-top = tech-c | minus: hw-c | minus: code-c | minus: define-c | minus: sys-c | minus: sw-c | times: -20 %}
 {% assign offset = plat-c | divided_by: 2 | times: 20 %}
 {% assign plat-y = plat-top | plus: offset %}
-{"key":10001, "parent":10000, "text":"harware", "url":"", "brush":"skyblue", "dir":"right", "loc":"200 {{ hw-y }}"},
-{"key":10002, "parent":10000, "text":"programming", "url":"", "brush":"skyblue", "dir":"right", "loc":"200 {{ code-y }}"},
-{"key":10003, "parent":10000, "text":"definition", "url":"", "brush":"skyblue", "dir":"right", "loc":"200 {{ define-y }}"},
-{"key":10004, "parent":10000, "text":"system", "url":"", "brush":"skyblue", "dir":"right", "loc":"200 {{ sys-y }}"},
-{"key":10005, "parent":10000, "text":"software usage", "url":"", "brush":"skyblue", "dir":"right", "loc":"200 {{ sw-y }}"},
-{"key":10006, "parent":10000, "text":"platform", "url":"", "brush":"skyblue", "dir":"right", "loc":"200 {{ plat-y }}"},
+{"key":10001, "parent":10000, "text":"Harware", "url":"", "brush":"skyblue", "dir":"right", "loc":"200 {{ hw-y }}"},
+{"key":10002, "parent":10000, "text":"Programming", "url":"", "brush":"skyblue", "dir":"right", "loc":"200 {{ code-y }}"},
+{"key":10003, "parent":10000, "text":"Definition", "url":"", "brush":"skyblue", "dir":"right", "loc":"200 {{ define-y }}"},
+{"key":10004, "parent":10000, "text":"System", "url":"", "brush":"skyblue", "dir":"right", "loc":"200 {{ sys-y }}"},
+{"key":10005, "parent":10000, "text":"Software usage", "url":"", "brush":"skyblue", "dir":"right", "loc":"200 {{ sw-y }}"},
+{"key":10006, "parent":10000, "text":"Platform", "url":"", "brush":"skyblue", "dir":"right", "loc":"200 {{ plat-y }}"},
 {% assign listen-top = 0 %}
 {% assign offset = listen-c | divided_by: 2 | times: 20 %}
 {% assign listen-y = listen-top | plus: offset %}
@@ -118,16 +159,64 @@
 {% assign write-top = listen-c | plus: speak-c | plus: read-c | times: 20 %}
 {% assign offset = write-c | divided_by: 2 | times: 20 %}
 {% assign write-y = write-top | plus: offset %}
-{"key":20001, "parent":20000, "text":"listening", "url":"", "brush":"darkseagreen", "dir":"right", "loc":"200 {{ listen-y }}"},
-{"key":20002, "parent":20000, "text":"speaking", "url":"", "brush":"darkseagreen", "dir":"right", "loc":"200 {{ speak-y }}"},
-{"key":20003, "parent":20000, "text":"reading", "url":"", "brush":"darkseagreen", "dir":"right", "loc":"200 {{ read-y }}"},
-{"key":20004, "parent":20000, "text":"writing", "url":"", "brush":"darkseagreen", "dir":"right", "loc":"200 {{ write-y }}"},
+{"key":20001, "parent":20000, "text":"Listening", "url":"", "brush":"darkseagreen", "dir":"right", "loc":"200 {{ listen-y }}"},
+{"key":20002, "parent":20000, "text":"Speaking", "url":"", "brush":"darkseagreen", "dir":"right", "loc":"200 {{ speak-y }}"},
+{"key":20003, "parent":20000, "text":"Reading", "url":"", "brush":"darkseagreen", "dir":"right", "loc":"200 {{ read-y }}"},
+{"key":20004, "parent":20000, "text":"Writing", "url":"", "brush":"darkseagreen", "dir":"right", "loc":"200 {{ write-y }}"},
+{% assign chores-y = 0 %}
+{% assign offset = chores-c | divided_by: 2 | times: 20 %}
+{% assign chores-top = chores-y | minus: offset %}
+{% assign insight-top = offset %}
+{% assign offset = chores-c | divided_by: 2 | times: 20 %}
+{% assign insight-y = chores-y | plus: offset %}
+{% assign finance-y = chores-c | plus: finance-c | divided_by: 2 | times: -20 %}
+{% assign finance-top = chores-c | divided_by: 2 | plus: finance-c | times: -20 %}
+{% assign family-y = chores-c | plus: family-c | divided_by: 2 | plus: finance-c | times: -20 %}
+{% assign family-top = chores-c | divided_by: 2 | plus: family-c | plus: finance-c | times: -20 %}
+{% assign insight-bottom = insight-c | times: 20 | plus: insight-top %}
+{"key":30001, "parent":30000, "text":"Family", "url":"", "brush":"palevioletred", "dir":"left", "loc":"-90 {{ family-y }}"},
+{"key":30002, "parent":30000, "text":"Finance", "url":"", "brush":"palevioletred", "dir":"left", "loc":"-90 {{ finance-y }}"},
+{"key":30003, "parent":30000, "text":"Chores", "url":"", "brush":"palevioletred", "dir":"left", "loc":"-90 {{ chores-y }}"},
+{"key":30004, "parent":30000, "text":"Insight", "url":"", "brush":"palevioletred", "dir":"left", "loc":"-90 {{ insight-y }}"},
+{% assign career-y = career-c | divided_by: 2 | plus: 1 | times: -20 | plus: family-top %}
+{% assign health-y = health-c | times: 10 | plus: insight-bottom %}
+{"key":40000, "parent":100000, "text":"Career", "brush":"red", "dir":"left", "loc":"-20 {{ career-y }}"},
+{"key":50000, "parent":100000, "text":"Health", "brush":"coral", "dir":"left", "loc":"-20 {{ health-y }}"},
+{% assign employer-top = employer-c | times: -20 | plus: family-top %}
+{% assign offset = employer-c | divided_by: 2 | times: 20 %}
+{% assign employer-y = employer-top | plus: offset %}
+{% assign cv-top = cv-c | times: -20 | plus: employer-top %}
+{% assign offset = cv-c | divided_by: 2 | times: 20 %}
+{% assign cv-y = cv-top | plus: offset %}
+{% assign bio-top = bio-c | times: -20 | plus: cv-top %}
+{% assign offset = bio-c | divided_by: 2 | times: 20 %}
+{% assign bio-y = bio-top | plus: offset %}
+{"key":40001, "parent":40000, "text":"Autobiography", "url":"", "brush":"red", "dir":"left", "loc":"-90 {{ bio-y }}"},
+{"key":40002, "parent":40000, "text":"Curriculum vitae", "url":"", "brush":"red", "dir":"left", "loc":"-90 {{ cv-y }}"},
+{"key":40003, "parent":40000, "text":"Employer", "url":"", "brush":"red", "dir":"left", "loc":"-90 {{ employer-y }}"},
+{% assign well-top = insight-bottom %}
+{% assign offset = well-c | divided_by: 2 | times: 20 %}
+{% assign well-y = well-top | plus: offset %}
+{% assign exercise-top = well-c | times: 20 | plus: well-top %}
+{% assign offset = exercise-c | divided_by: 2 | times: 20 %}
+{% assign exercise-y = exercise-top | plus: offset %}
+{"key":50001, "parent":50000, "text":"Health and Wellness", "url":"", "brush":"coral", "dir":"left", "loc":"-90 {{ well-y }}"},
+{"key":50002, "parent":50000, "text":"Exercise", "url":"", "brush":"coral", "dir":"left", "loc":"-90 {{ exercise-y }}"},
+
 {% assign hw = 0 %}
 {% assign code = 0 %}
 {% assign define = 0 %}
 {% assign sys = 0 %}
 {% assign sw = 0 %}
 {% assign plat = 0 %}
+{% assign listen = 0 %}
+{% assign speak = 0 %}
+{% assign read = 0 %}
+{% assign write = 0 %}
+{% assign family = 0 %}
+{% assign finance = 0 %}
+{% assign chores = 0 %}
+{% assign insight = 0 %}
 {% assign sortedPosts = site.posts | sort: 'title' %}
 {% for post in sortedPosts %}
 {% if post.tags %}
@@ -157,12 +246,62 @@
 {% assign plat-step = plat | times: 20 %}
 {"key":{% increment var %}, "parent":10006, "text": "{{ post.title }}", "url":"{{ site.baseurl }}{{ post.url }}", "brush":"skyblue", "dir":"right", "loc":"260 {{ plat-top | plus: plat-step }}"},
 {% assign plat = plat | plus: 1 %}
+{% when 'listening' %}
+{% assign listen-step = listen | times: 20 %}
+{"key":{% increment var %}, "parent":20001, "text": "{{ post.title }}", "url":"{{ site.baseurl }}{{ post.url }}", "brush":"darkseagreen", "dir":"right", "loc":"260 {{ listen-top | plus: listen-step }}"},
+{% assign listen = listen | plus: 1 %}
+{% when 'speaking' %}
+{% assign speak-step = speak | times: 20 %}
+{"key":{% increment var %}, "parent":20002, "text": "{{ post.title }}", "url":"{{ site.baseurl }}{{ post.url }}", "brush":"darkseagreen", "dir":"right", "loc":"260 {{ speak-top | plus: speak-step }}"},
+{% assign speak = speak | plus: 1 %}
+{% when 'reading' %}
+{% assign read-step = read | times: 20 %}
+{"key":{% increment var %}, "parent":20003, "text": "{{ post.title }}", "url":"{{ site.baseurl }}{{ post.url }}", "brush":"darkseagreen", "dir":"right", "loc":"260 {{ read-top | plus: read-step }}"},
+{% assign read = read | plus: 1 %}
+{% when 'writing' %}
+{% assign write-step = write | times: 20 %}
+{"key":{% increment var %}, "parent":20004, "text": "{{ post.title }}", "url":"{{ site.baseurl }}{{ post.url }}", "brush":"darkseagreen", "dir":"right", "loc":"260 {{ write-top | plus: write-step }}"},
+{% assign write = write | plus: 1 %}
+{% when 'family' %}
+{% assign family-step = family | times: 20 %}
+{"key":{% increment var %}, "parent":30001, "text": "{{ post.title }}", "url":"{{ site.baseurl }}{{ post.url }}", "brush":"palevioletred", "dir":"left", "loc":"-160 {{ family-top | plus: family-step }}"},
+{% assign family = family | plus: 1 %}
+{% when 'finance' %}
+{% assign finance-step = finance | times: 20 %}
+{"key":{% increment var %}, "parent":30002, "text": "{{ post.title }}", "url":"{{ site.baseurl }}{{ post.url }}", "brush":"palevioletred", "dir":"left", "loc":"-160 {{ finance-top | plus: finance-step }}"},
+{% assign finance = finance | plus: 1 %}
+{% when 'chores' %}
+{% assign chores-step = chores | times: 20 %}
+{"key":{% increment var %}, "parent":30003, "text": "{{ post.title }}", "url":"{{ site.baseurl }}{{ post.url }}", "brush":"palevioletred", "dir":"left", "loc":"-160 {{ chores-top | plus: chores-step }}"},
+{% assign chores = chores | plus: 1 %}
+{% when 'insight' %}
+{% assign insight-step = insight | times: 20 %}
+{"key":{% increment var %}, "parent":30004, "text": "{{ post.title }}", "url":"{{ site.baseurl }}{{ post.url }}", "brush":"palevioletred", "dir":"left", "loc":"-160 {{ insight-top | plus: insight-step }}"},
+{% assign insight = insight | plus: 1 %}
+{% when 'bio' %}
+{% assign bio-step = bio | times: 20 %}
+{"key":{% increment var %}, "parent":40001, "text": "{{ post.title }}", "url":"{{ site.baseurl }}{{ post.url }}", "brush":"red", "dir":"left", "loc":"-200 {{ bio-top | plus: bio-step }}"},
+{% assign bio = bio | plus: 1 %}
+{% when 'cv' %}
+{% assign cv-step = cv | times: 20 %}
+{"key":{% increment var %}, "parent":40002, "text": "{{ post.title }}", "url":"{{ site.baseurl }}{{ post.url }}", "brush":"red", "dir":"left", "loc":"-200 {{ cv-top | plus: cv-step }}"},
+{% assign cv = cv | plus: 1 %}
+{% when 'employer' %}
+{% assign employer-step = employer | times: 20 %}
+{"key":{% increment var %}, "parent":40003, "text": "{{ post.title }}", "url":"{{ site.baseurl }}{{ post.url }}", "brush":"red", "dir":"left", "loc":"-160 {{ employer-top | plus: employer-step }}"},
+{% assign employer = employer | plus: 1 %}
+{% when 'wellness' %}
+{% assign well-step = well | times: 20 %}
+{"key":{% increment var %}, "parent":50001, "text": "{{ post.title }}", "url":"{{ site.baseurl }}{{ post.url }}", "brush":"coral", "dir":"left", "loc":"-250 {{ well-top | plus: well-step }}"},
+{% assign well = well | plus: 1 %}
+{% when 'exercise' %}
+{% assign exercise-step = exercise | times: 20 %}
+{"key":{% increment var %}, "parent":50002, "text": "{{ post.title }}", "url":"{{ site.baseurl }}{{ post.url }}", "brush":"coral", "dir":"left", "loc":"-160 {{ exercise-top | plus: exercise-step }}"},
+{% assign exercise = exercise | plus: 1 %}
 {% endcase %}
 {% endfor %}
 {% endif %}
 {% endfor %}
-{"key":100, "parent":100000, "text":"Career", "brush":"red", "dir":"left", "loc":"-98 -100"},
-{"key":100, "parent":100000, "text":"Daily life", "brush":"palevioletred", "dir":"left", "loc":"-98 0"},
-{"key":100, "parent":100000, "text":"Health", "brush":"coral", "dir":"left", "loc":"-98 78.75"}
+{}
  ]
 }
