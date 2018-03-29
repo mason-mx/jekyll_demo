@@ -2,7 +2,7 @@
 layout: post
 title: Health Preserving
 categories: health
-tags: Kidney
+tags: wellness
 author: Mason
 ---
 

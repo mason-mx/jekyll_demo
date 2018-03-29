@@ -2,7 +2,7 @@
 layout: post
 title: Oven Recipes
 categories: life
-tags: Cooking
+tags: chores
 author: Mason
 ---
 

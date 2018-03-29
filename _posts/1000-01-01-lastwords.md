@@ -3,7 +3,7 @@ layout: post
 title: The last words for her loved one
 description: last words
 categories: life
-tags: Love
+tags: insight
 author: Mason
 ---
 

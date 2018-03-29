@@ -2,7 +2,7 @@
 layout: post
 title: Health Preserving
 categories: health
-tags: Exercise
+tags: exercise
 author: Mason
 ---
 

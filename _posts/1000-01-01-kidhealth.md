@@ -3,7 +3,7 @@ layout: post
 title: Healthy Child
 description: Healthy body
 categories: health
-tags: Kid
+tags: wellness
 author: Mason
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: Self Introduction
 categories: career
-tags: bio
+tags: cv
 author: Mason
 ---
 
