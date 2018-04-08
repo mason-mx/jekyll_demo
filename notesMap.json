@@ -108,6 +108,30 @@
 {% endif %}
 {% endfor %}
 
+{% assign hw-c = hw-c | plus: 3 %}
+{% assign code-c = code-c | plus: 3 %}
+{% assign define-c = define-c | plus: 3 %}
+{% assign sys-c = sys-c | plus: 3 %}
+{% assign sw-c = sw-c | plus: 3 %}
+{% assign plat-c = plat-c | plus: 3 %}
+
+{% assign listen-c = listen-c | plus: 3 %}
+{% assign speak-c = speck-c  | plus: 3 %}
+{% assign read-c = read-c | plus: 3 %}
+{% assign write-c = write-c | plus: 3 %}
+
+{% assign family-c = family-c | plus: 3 %}
+{% assign finance-c = finance-c | plus: 3 %}
+{% assign chores-c = chores-c | plus: 3 %}
+{% assign insight-c = insight-c | plus: 3 %}
+
+{% assign bio-c = bio-c | plus: 3 %}
+{% assign cv-c = cv-c | plus: 3 %}
+{% assign employer-c = employer-c | plus: 3 %}
+
+{% assign well-c = well-c | plus: 3 %}
+{% assign exercise-c = exercise-c | plus: 3 %}
+
 {% assign tech-c = tech-c | plus: hw-c | plus: code-c | plus: define-c | plus: sys-c | plus: sw-c | plus: plat-c %}
 {% assign en-c = en-c | plus: listen-c | plus: speak-c | plus: read-c | plus: write-c %}
 {% assign career-c = bio-c | plus: cv-c | plus: employer-c %}
