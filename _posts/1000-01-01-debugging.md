@@ -70,6 +70,7 @@ find $1 -name 'index.html' -prune -o -type f -name '*.htm' -print
 ```
 gcc -o HelloWorld HelloWorld.c
 gcc -o demo -g -rdynamic demo.c
+gcc -S -o a.s a.c
 ```
 
 ### Patch
