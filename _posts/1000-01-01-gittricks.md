@@ -30,6 +30,12 @@ git push origin master
 git pull
 ```
 
+## Determine the URL that a local Git repository was originally cloned from
+
+```
+git remote show origin
+```
+
 ## Branch
 
 ```
