@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Health Preserving
+title: Chinese Traditional Madicine
 categories: health
 tags: wellness
 author: Mason

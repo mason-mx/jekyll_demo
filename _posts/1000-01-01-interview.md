@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Interview questions
+title: Interview Questions
 categories: career
 tags: interview
 author: Mason
