@@ -30,6 +30,12 @@ git push origin master
 git pull
 ```
 
+## Get specific version by a commit ID
+
+```
+git reset --hard <commit-hash>
+```
+
 ## Determine the URL that a local Git repository was originally cloned from
 
 ```
