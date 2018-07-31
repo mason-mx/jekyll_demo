@@ -25,6 +25,7 @@ git add .
 git status –s
 git commit -m 'Initial commit'
 git log
+git show commitID
 git remote add origin ssh://git@10.5.20.16:/home/git/bigdata/deploy.git
 git push origin master
 git pull
