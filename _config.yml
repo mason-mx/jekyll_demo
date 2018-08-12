@@ -8,3 +8,6 @@ author: "Mason"
 kramdown:
   input: GFM
 permalink: pretty
+
+sass:
+  style: :compressed

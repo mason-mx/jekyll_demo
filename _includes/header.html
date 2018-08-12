@@ -1,17 +1,19 @@
-<header class="site-header" role="banner">
-	<p class="logo"><a href="{{ "/" | prepend: site.baseurl }}"><img src="{{ "/images/logo.png" | prepend: site.baseurl }}" height="50" width="50" alt="Mason" />Putting everything in order</a></p>
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<img src="{{ "/images/logo.png" | prepend: site.baseurl }}" height="50" width="50" alt="Mason" />
+		</div>
 
-	<ul class="social-sites">
-		<li><a href="http://www.linkedin.com/in/starshining">i</a></li>
-		<li><a href="https://starshining8.wordpress.com/">W</a></li>
-		<li><a href="skype:+frank_jobs?chat">H</a></li>
-	</ul>
-
-	<nav role="navigation">
-		<ul class="nav-main">
-			<li><a href="{{ "/" | prepend: site.baseurl }}" class="current-page">Home</a></li>
-			<li><a href="{{ "/about/index.html" | prepend: site.baseurl }}">About</a></li>
-			<li><a href="{{ "/comtact.html" | prepend: site.baseurl }}">Contact</a></li>
+		<ul class="social-sites">
+			<li><a href="http://www.linkedin.com/in/starshining">i</a></li>
+			<li><a href="https://starshining8.wordpress.com/">W</a></li>
+			<li><a href="skype:+frank_jobs?chat">H</a></li>
 		</ul>
-	</nav>
-</header>
+
+		<ul class="nav navbar-nav">
+			<li><a href="{{ "/" | prepend: site.baseurl }}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+			<li><a href="{{ "/about/index.html" | prepend: site.baseurl }}"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
+			<li><a href="{{ "/comtact.html" | prepend: site.baseurl }}"><span class="glyphicon glyphicon-eye-open"></span> Contact</a></li>
+		</ul>
+	</div>
+</nav>
