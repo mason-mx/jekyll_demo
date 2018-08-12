@@ -50,6 +50,18 @@ body {
 	padding-left: 0.6rem;
 }
 
+.card-columns {
+	@include media-query($on-mac13-landscape) {
+		column-count: 6;
+	}
+	@include media-query($on-pad-portrait) {
+	  column-count: 54;
+	}
+	@include media-query($on-palm-portrait) {
+	  column-count: 4;
+	}
+}
+
 /**
  * Page content
  */
@@ -205,32 +217,11 @@ article header p {
 }
 
 #wrapper {
-	width:860px;
-	@include media-query($on-pad-portrait) {
-		width:$on-pad-portrait;
-	}
-	@include media-query($on-palm-portrait) {
-		width:$on-palm-portrait;
-	}
-	margin:0 auto;
-	margin-top: 95px; 
-	text-align:center;
-	padding-top:10px;
+	display:block;
 }
 
 #content {
-	width:960px;
-	@include media-query($on-pad-portrait) {
-		width:$on-pad-portrait;
-	}
-	@include media-query($on-palm-portrait) {
-		width:$on-palm-portrait;
-	}
-	margin:0 auto;
-	margin-top: 95px; 
-	text-align:left;
-        display:none;
-	padding-top:10px;
+    display:none;
 }
 
 ul#index_cards {

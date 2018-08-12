@@ -16,10 +16,8 @@ function filter(liId)
 }
 function showCategory(CategoryId)
 {
-    var div1 = $("content");
-    var div2 = $("wrapper");
-    div1.style.display = "block";
-    div2.style.display = "none";
+    $("#wrapper").css("display","none");
+    $("#content").css("display","block");
     filter(CategoryId)
 }
 function showCards()

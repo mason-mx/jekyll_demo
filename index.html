@@ -2,85 +2,93 @@
 layout: default
 title: Welcome to Jekyll
 ---
-<div id="wrapper">
-	<ul id="index_cards">
-		<li id="card-1">
-			<a href="#" onClick="showCategory('li-abc')">
-				<h3 class="cartoon">Language</h3>
-				<img src="images/abc.png" height="130" width="130" alt="Language" />
-			</a>
-			<p>* Extracts<br />
-			* Expression<br />
-			* IETLS<br />
-			* Stories<br />
-			* Accent</p>
-		</li>
-		<li id="card-2">
-			<a href="#" onClick="showCategory('li-ware')">
-				<h3 class="cartoon">Ware</h3>
-				<img src="images/ware.png" height="130" width="130" alt="Software" />
-			</a>
-			<p>@ OS<br />
-			@ Software<br />
-			@ Development<br />
-			@ Hardware<br />
-			@ Peripherals</p>
-		</li>
-		<li id="card-3">
-			<a href="#" onClick="showCategory('li-career')">
-				<h3 class="cartoon">Career</h3>
-				<img src="images/career.png" height="130" width="130" alt="Career" />
-			</a>
-			<p>$ Biography<br />
-			$ Coverletter<br />
-			$ Resume<br />
-			$ Jobs<br />
-			</p>
-		</li>
-		<li id="card-4">
-			<a href="#" onClick="showCategory('li-life')">
-				<h3 class="cartoon">Life</h3>
-				<img src="images/life.png" height="130" width="130" alt="Hardware" />
-			</a>
-			<p># Errands<br />
-			# Finance<br />
-			# Education<br />
-			# Insight<br />
-			# Wiki</p>
-		</li>
-		<li id="card-5">
-			<a href="#" onClick="showCategory('li-health')">
-				<h3 class="cartoon">Health</h3>
-				<img src="images/health.png" height="130" width="130" alt="Health" />
-			</a>
-			<p>& Fitness<br />
-			& Diet<br />
-			& Holistic Medicine<br />
-			<br />
-			</p>
-		</li>
-	</ul>
-</div>
-<div id="content">
-<ul id="posts">
-	{% assign sortedPosts = site.posts | sort: 'title' %}
-	{% for post in sortedPosts %}
-	{% if post.categories contains 'software' or post.categories contains 'hardware' %}
-	<li class="li-ware"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-	{% endif %}
-	{% if post.categories contains 'abc' %}
-	<li class="li-abc"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-	{% endif %}
-	{% if post.categories contains 'career' %}
-	<li class="li-career"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-	{% endif %}
-	{% if post.categories contains 'life' %}
-	<li class="li-life"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-	{% endif %}
-	{% if post.categories contains 'health' %}
-	<li class="li-health"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-	{% endif %}
-	{% endfor %}
-	</ul>		
+<div class="container"> 
+	<div id="wrapper" class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<ul id="index_cards">
+				<li id="card-1">
+					<a href="#" onClick="showCategory('li-abc')">
+						<h3 class="cartoon">Language</h3>
+						<img src="images/abc.png" height="130" width="130" alt="Language" />
+					</a>
+					<p>* Extracts<br />
+					* Expression<br />
+					* IETLS<br />
+					* Stories<br />
+					* Accent</p>
+				</li>
+				<li id="card-2">
+					<a href="#" onClick="showCategory('li-ware')">
+						<h3 class="cartoon">Ware</h3>
+						<img src="images/ware.png" height="130" width="130" alt="Software" />
+					</a>
+					<p>@ OS<br />
+					@ Software<br />
+					@ Development<br />
+					@ Hardware<br />
+					@ Peripherals</p>
+				</li>
+				<li id="card-3">
+					<a href="#" onClick="showCategory('li-career')">
+						<h3 class="cartoon">Career</h3>
+						<img src="images/career.png" height="130" width="130" alt="Career" />
+					</a>
+					<p>$ Biography<br />
+					$ Coverletter<br />
+					$ Resume<br />
+					$ Jobs<br />
+					</p>
+				</li>
+				<li id="card-4">
+					<a href="#" onClick="showCategory('li-life')">
+						<h3 class="cartoon">Life</h3>
+						<img src="images/life.png" height="130" width="130" alt="Hardware" />
+					</a>
+					<p># Errands<br />
+					# Finance<br />
+					# Education<br />
+					# Insight<br />
+					# Wiki</p>
+				</li>
+				<li id="card-5">
+					<a href="#" onClick="showCategory('li-health')">
+						<h3 class="cartoon">Health</h3>
+						<img src="images/health.png" height="130" width="130" alt="Health" />
+					</a>
+					<p>& Fitness<br />
+					& Diet<br />
+					& Holistic Medicine<br />
+					<br />
+					</p>
+				</li>
+			</ul>
+		</div>
+		<div class="col-md-2"></div>
+	</div>
+	<div id="content" class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<ul id="posts">
+				{% assign sortedPosts = site.posts | sort: 'title' %}
+				{% for post in sortedPosts %}
+				{% if post.categories contains 'software' or post.categories contains 'hardware' %}
+				<li class="li-ware"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+				{% endif %}
+				{% if post.categories contains 'abc' %}
+				<li class="li-abc"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+				{% endif %}
+				{% if post.categories contains 'career' %}
+				<li class="li-career"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+				{% endif %}
+				{% if post.categories contains 'life' %}
+				<li class="li-life"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+				{% endif %}
+				{% if post.categories contains 'health' %}
+				<li class="li-health"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+				{% endif %}
+				{% endfor %}
+			</ul>		
+		</div>
 </div>
 
