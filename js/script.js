@@ -1,30 +1,17 @@
-function $(id)
-{
-    return document.getElementById(id);
-}
-function filter(liId)
-{
-	var items = $("posts").getElementsByTagName("li"), i;
-	for (i = 0; i < items.length; i +=1 )
-	{
-		items[i].style.display = "none";
-	}
-	var litoshow = document.getElementsByClassName(liId);
-	for (i = 0; i < litoshow.length; i +=1 ) {
-		litoshow[i].style.display = "block";
-	}
-}
-function showCategory(CategoryId)
-{
-    $("#wrapper").css("display","none");
-    $("#content").css("display","block");
-    filter(CategoryId)
-}
-function showCards()
-{
-    var div1 = $("content");
-    var div2 = $("wrapper");
-    div1.style.display = "none";
-    div2.style.display = "block";
-}
+$(document).ready(function(){
+	JekyllSearch();
+	$("#BtnGreen").click(function(){
+		$(".post-container").css("background-color", "rgb(219, 238, 221)");
+		$("#mySideBtn").animate({right	: '0'});
+		$("#mySidenav").css("width","0");
+	});
+	$("#mySideBtn").click(function(){
+		$("#mySideBtn").animate({right: '110px'});
+		$("#mySidenav").css("width","110px");
+	});
+	$(".closebtn").click(function(){
+		$("#mySideBtn").animate({right	: '0'});
+		$("#mySidenav").css("width","0");
+	});
+});
 

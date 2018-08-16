@@ -7,14 +7,8 @@
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
-  <script src="{{ "/js/script.js" | prepend: site.baseurl }}"></script>
   <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js">
   </script>
-  <!-- Script pointing to jekyll-search.js -->
-  <script src="{{ "/js/jekyll-search.js" | prepend: site.baseurl }}"></script>
-  <script>
-  $(document).ready(function(){
-      JekyllSearch();
-  });
-  </script>
+  <script src="{{ "/js/functions.js" | prepend: site.baseurl }}"></script>
+  <script src="{{ "/js/script.js" | prepend: site.baseurl }}"></script>
 </head>
