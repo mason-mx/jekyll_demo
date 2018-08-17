@@ -1,6 +1,7 @@
 
 $(document).ready(function(){
 	JekyllSearch();
+
 	$("body").css("background-color", localStorage.getItem("bodyBackgroudColor"));
 	$("#BtnGreen").click(function(){
 		$("body").css("background-color", "rgb(219, 238, 221)");
@@ -8,13 +9,33 @@ $(document).ready(function(){
 		$("#mySideBtn").animate({right	: '0'});
 		$("#mySidenav").css("width","0");
 	});
+
 	$("#mySideBtn").click(function(){
 		$("#mySideBtn").animate({right: '110px'});
 		$("#mySidenav").css("width","110px");
 	});
+
 	$(".closebtn").click(function(){
 		$("#mySideBtn").animate({right	: '0'});
 		$("#mySidenav").css("width","0");
 	});
-});
+/*
+	$(window).scroll(function(e){
+		//获取要定位元素距离浏览器顶部的距离
+		var navH = $("#category-1").offset().top;
+		var navH1 = $("#topbar").position().top + $("#topbar").outerHeight(true);;
+		console.log(navH1);
 
+		//获取滚动条的滑动距离
+		var scroH = $(this).scrollTop();
+		console.log(scroH);
+		//滚动条的滑动距离大于等于定位元素距离浏览器顶部的距离，就固定，反之就不固定
+		if(scroH >= navH){
+			//$("#category-1").css({"position":"fixed","top":50});
+		}else{
+			//$("#category-1").css({"position":"static"});
+		}
+		
+	});
+*/
+});

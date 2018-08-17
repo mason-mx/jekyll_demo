@@ -97,6 +97,16 @@ body {
   //.sidenav a {font-size: 18px;}
 }
 
+/* Scroll Div */
+div.category-head {
+	position: -webkit-sticky;
+	position: sticky;
+	pad: 0,0,0,0;
+	top: 60px;
+	background-color: #cae8ca;
+	border: 2px solid #4CAF50;
+}
+
 /////////////////////////////
 
 .card-columns {
