@@ -1,7 +1,10 @@
+
 $(document).ready(function(){
 	JekyllSearch();
+	$("body").css("background-color", localStorage.getItem("bodyBackgroudColor"));
 	$("#BtnGreen").click(function(){
-		$(".post-container").css("background-color", "rgb(219, 238, 221)");
+		$("body").css("background-color", "rgb(219, 238, 221)");
+		localStorage.setItem("bodyBackgroudColor", "rgb(219, 238, 221)");
 		$("#mySideBtn").animate({right	: '0'});
 		$("#mySidenav").css("width","0");
 	});
