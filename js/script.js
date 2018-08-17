@@ -7,17 +7,35 @@ $(document).ready(function(){
 		$("body").css("background-color", "rgb(219, 238, 221)");
 		localStorage.setItem("bodyBackgroudColor", "rgb(219, 238, 221)");
 		$("#mySideBtn").animate({right	: '0'});
-		$("#mySidenav").css("width","0");
+		$("#myFloatBar").css("width","0");
 	});
 
 	$("#mySideBtn").click(function(){
 		$("#mySideBtn").animate({right: '110px'});
-		$("#mySidenav").css("width","110px");
+		$("#myFloatBar").css("width","110px");
 	});
 
-	$(".closebtn").click(function(){
+	$("#myFloatBar .closeBtn").click(function(){
 		$("#mySideBtn").animate({right	: '0'});
+		$("#myFloatBar").css("width","0");
+	});
+
+	$("#mySidenav .closeBtn").click(function(){
 		$("#mySidenav").css("width","0");
+	});
+
+	$("#mySidenav .catagories").click(function(){
+		$("#mySidenav").css("width","0");
+		var el = $(this).attr('href');
+		var elWrapped = $(el);
+		
+		scrollToDiv(elWrapped,60);
+		
+		return false;
+	});
+
+	$('#homeMenu').click(function(){
+		$("#mySidenav").css("width","180px");
 	});
 /*
 	$(window).scroll(function(e){

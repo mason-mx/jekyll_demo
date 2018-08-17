@@ -11,7 +11,7 @@ layout: default
 					{% capture category_name %}{{ category | first }}{% endcapture %}
 					<div id="#{{ category_name | slugize }}">
 						<div id="category-{{ counter }}" class="category-head">
-							<h1>{{ category_name }}</h1>
+							<h1>{{ category_name | capitalize }}</h1>
 						</div>
 						{% for post in site.categories[category_name] %}
 							<article class="archive-item">
