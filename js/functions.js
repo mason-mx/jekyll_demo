@@ -1,14 +1,8 @@
-function filter(liId)
+function filter(liClass)
 {
-	var items = $("posts").getElementsByTagName("li"), i;
-	for (i = 0; i < items.length; i +=1 )
-	{
-		items[i].style.display = "none";
-	}
-	var litoshow = document.getElementsByClassName(liId);
-	for (i = 0; i < litoshow.length; i +=1 ) {
-		litoshow[i].style.display = "block";
-	}
+    var liClass= "." + liClass;
+    $("#postlist li").hide();
+    $(liClass).show();
 }
 
 function showCategory(CategoryId)

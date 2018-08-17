@@ -69,7 +69,7 @@ title: Welcome to Jekyll
 	<div id="content" class="row">
 		<div class="col-md-2"></div>
 		<div class="col-md-8">
-			<ul id="posts">
+			<ul id="postlist">
 				{% assign sortedPosts = site.posts | sort: 'title' %}
 				{% for post in sortedPosts %}
 				{% if post.categories contains 'software' or post.categories contains 'hardware' %}

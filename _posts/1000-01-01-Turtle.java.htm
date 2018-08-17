@@ -1,0 +1,191 @@
+---
+categories: software
+tags: programming
+---
+
+<!-- saved from url=(0077)http://users.dickinson.edu/~braught/courses/cs132s03/code/Turtle.INT.src.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Turtle.java</title></head>
+<body bgcolor="#FFFFFF" text="#000000" link="#473C8B" vlink="#757575">
+<hr>
+<center>
+<font size="+2" color="#006400">
+<b>
+Computer Science 132<br>
+Introduction To Computing II<br>
+</b>
+</font>
+<font size="-1">
+<br>
+Dickinson College<br>
+Spring Semester 2003<br>
+Grant Braught
+</font>
+</center>
+
+<hr>
+<pre><tt>
+<b><font color="#000080">import</font></b> java<font color="#990000">.</font>awt<font color="#990000">.</font><font color="#990000">*</font><font color="#990000">;</font>
+
+<i><font color="#9A1900">/**</font></i>
+<i><font color="#9A1900"> * The Turtle class describes Turtle objects which</font></i>
+<i><font color="#9A1900"> * represent the drawing turtle in a turtle graphics</font></i>
+<i><font color="#9A1900"> * application. Each turtle has a position on the</font></i>
+<i><font color="#9A1900"> * screen, a color and an angle indicating the direction</font></i>
+<i><font color="#9A1900"> * in which the turtle is traveling.  Also, a turtle's </font></i>
+<i><font color="#9A1900"> * pen may either be down (drawing) or up (not drawing).</font></i>
+<i><font color="#9A1900"> */</font></i>
+<b><font color="#0000FF">public</font></b> <b><font color="#0000FF">class</font></b> Turtle <font color="#FF0000">{</font>
+    
+    <b><font color="#0000FF">private</font></b> <font color="#009900">int</font> x<font color="#990000">;</font>
+    <b><font color="#0000FF">private</font></b> <font color="#009900">int</font> y<font color="#990000">;</font>
+    <b><font color="#0000FF">private</font></b> <font color="#009900">int</font> angle<font color="#990000">;</font>
+    <b><font color="#0000FF">private</font></b> Color penColor<font color="#990000">;</font>
+    <b><font color="#0000FF">private</font></b> <font color="#009900">boolean</font> penPosition<font color="#990000">;</font>
+
+    <i><font color="#9A1900">/**</font></i>
+<i><font color="#9A1900">     * Constant indicating a Turtle's pen is down.</font></i>
+<i><font color="#9A1900">     */</font></i>
+    <b><font color="#0000FF">public</font></b> <b><font color="#0000FF">static</font></b> <font color="#009900">boolean</font> PEN_DOWN <font color="#990000">=</font> true<font color="#990000">;</font>
+
+    <i><font color="#9A1900">/**</font></i>
+<i><font color="#9A1900">     * Constant indicating that a Turtle's pen is up.</font></i>
+<i><font color="#9A1900">     */</font></i>
+    <b><font color="#0000FF">public</font></b> <b><font color="#0000FF">static</font></b> <font color="#009900">boolean</font> PEN_UP <font color="#990000">=</font> false<font color="#990000">;</font>
+
+    <i><font color="#9A1900">/**</font></i>
+<i><font color="#9A1900">     * Construct a new default Turtle.  The new Turtle will</font></i>
+<i><font color="#9A1900">     * appear at position 50,50, will have an angle of 0,</font></i>
+<i><font color="#9A1900">     * its pen will be black and will be up.</font></i>
+<i><font color="#9A1900">     */</font></i>
+    <b><font color="#0000FF">public</font></b> <b><font color="#000000">Turtle</font></b><font color="#990000">(</font><font color="#990000">)</font> <font color="#FF0000">{</font>	
+	x <font color="#990000">=</font> <font color="#993399">50</font><font color="#990000">;</font>
+	y <font color="#990000">=</font> <font color="#993399">50</font><font color="#990000">;</font>
+	angle <font color="#990000">=</font> <font color="#993399">0</font><font color="#990000">;</font>
+	penColor <font color="#990000">=</font> Color<font color="#990000">.</font>black<font color="#990000">;</font>
+	penPosition <font color="#990000">=</font> PEN_UP<font color="#990000">;</font>
+    <font color="#FF0000">}</font>
+    
+    <i><font color="#9A1900">/**</font></i>
+<i><font color="#9A1900">     * Construct a new Turtle with the specified parameters. The</font></i>
+<i><font color="#9A1900">     * new Turtle's pen will be up.</font></i>
+<i><font color="#9A1900">     *</font></i>
+<i><font color="#9A1900">     * @param initX the x coordinate for the new Turtle.</font></i>
+<i><font color="#9A1900">     * @param initY the y coordinate for the new Turtle.</font></i>
+<i><font color="#9A1900">     * @param initAngle the angle for the new Turtle.</font></i>
+<i><font color="#9A1900">     * @param initColor the color of the new Turtle's pen.</font></i>
+<i><font color="#9A1900">     */</font></i>
+    <b><font color="#0000FF">public</font></b> <b><font color="#000000">Turtle</font></b><font color="#990000">(</font><font color="#009900">int</font> initX<font color="#990000">,</font> <font color="#009900">int</font> initY<font color="#990000">,</font> <font color="#009900">int</font> initAngle<font color="#990000">,</font> Color initColor<font color="#990000">)</font> <font color="#FF0000">{</font>
+	x<font color="#990000">=</font>initX<font color="#990000">;</font>
+	y<font color="#990000">=</font>initY<font color="#990000">;</font>
+	angle<font color="#990000">=</font>initAngle<font color="#990000">;</font>
+	penColor <font color="#990000">=</font> initColor<font color="#990000">;</font>
+	penPosition <font color="#990000">=</font> PEN_UP<font color="#990000">;</font>
+    <font color="#FF0000">}</font>
+
+    <i><font color="#9A1900">/**</font></i>
+<i><font color="#9A1900">     * Move this Turtle forward by the specified number of</font></i>
+<i><font color="#9A1900">     * screen pixels.</font></i>
+<i><font color="#9A1900">     *</font></i>
+<i><font color="#9A1900">     * @param pixels the number of screen pixes by which</font></i>
+<i><font color="#9A1900">     *               to move this Turtle forward. </font></i>
+<i><font color="#9A1900">     */</font></i>
+    <b><font color="#0000FF">public</font></b> <font color="#009900">void</font> <b><font color="#000000">moveForward</font></b><font color="#990000">(</font><font color="#009900">int</font> pixels<font color="#990000">)</font> <font color="#FF0000">{</font>
+	<font color="#009900">double</font> radAngle <font color="#990000">=</font> Math<font color="#990000">.</font><b><font color="#000000">toRadians</font></b><font color="#990000">(</font>angle<font color="#990000">)</font><font color="#990000">;</font>
+	x <font color="#990000">=</font> x <font color="#990000">+</font> <font color="#990000">(</font><font color="#009900">int</font><font color="#990000">)</font>Math<font color="#990000">.</font><b><font color="#000000">round</font></b><font color="#990000">(</font>Math<font color="#990000">.</font><b><font color="#000000">cos</font></b><font color="#990000">(</font>radAngle<font color="#990000">)</font> <font color="#990000">*</font> pixels<font color="#990000">)</font><font color="#990000">;</font>
+	y <font color="#990000">=</font> y <font color="#990000">-</font> <font color="#990000">(</font><font color="#009900">int</font><font color="#990000">)</font>Math<font color="#990000">.</font><b><font color="#000000">round</font></b><font color="#990000">(</font>Math<font color="#990000">.</font><b><font color="#000000">sin</font></b><font color="#990000">(</font>radAngle<font color="#990000">)</font> <font color="#990000">*</font> pixels<font color="#990000">)</font><font color="#990000">;</font>
+    <font color="#FF0000">}</font>
+
+    <i><font color="#9A1900">/**</font></i>
+<i><font color="#9A1900">     * Rotate this Turtle counter-clockwise by the specified </font></i>
+<i><font color="#9A1900">     * number of degrees.</font></i>
+<i><font color="#9A1900">     *</font></i>
+<i><font color="#9A1900">     * @param degrees the number of degrees by which to rotate</font></i>
+<i><font color="#9A1900">     *                this Turtle.</font></i>
+<i><font color="#9A1900">     */</font></i>
+    <b><font color="#0000FF">public</font></b> <font color="#009900">void</font> <b><font color="#000000">rotate</font></b><font color="#990000">(</font><font color="#009900">int</font> degrees<font color="#990000">)</font> <font color="#FF0000">{</font>
+	<font color="#009900">int</font> newAngle <font color="#990000">=</font> angle <font color="#990000">+</font> degrees<font color="#990000">;</font>
+	angle <font color="#990000">=</font> newAngle <font color="#990000">%</font> <font color="#993399">360</font><font color="#990000">;</font>
+    <font color="#FF0000">}</font>
+
+    <i><font color="#9A1900">/**</font></i>
+<i><font color="#9A1900">     * Put this Turtle's pen down. When this Turtle's pen is</font></i>
+<i><font color="#9A1900">     * down it will draw a line in its color as it moves</font></i>
+<i><font color="#9A1900">     * forward.</font></i>
+<i><font color="#9A1900">     */</font></i>
+    <b><font color="#0000FF">public</font></b> <font color="#009900">void</font> <b><font color="#000000">putPenDown</font></b><font color="#990000">(</font><font color="#990000">)</font> <font color="#FF0000">{</font>
+	penPosition <font color="#990000">=</font> PEN_DOWN<font color="#990000">;</font>
+    <font color="#FF0000">}</font>
+
+    <i><font color="#9A1900">/**</font></i>
+<i><font color="#9A1900">     * Pick this Turtle's pen up. When this Turtle's pen is</font></i>
+<i><font color="#9A1900">     * up it will not draw a line as it moves forward.</font></i>
+<i><font color="#9A1900">     */</font></i>
+    <b><font color="#0000FF">public</font></b> <font color="#009900">void</font> <b><font color="#000000">pickPenUp</font></b><font color="#990000">(</font><font color="#990000">)</font> <font color="#FF0000">{</font>
+	penPosition <font color="#990000">=</font> PEN_UP<font color="#990000">;</font>
+    <font color="#FF0000">}</font>
+
+    <i><font color="#9A1900">/**</font></i>
+<i><font color="#9A1900">     * Ask this Turtle if it's pen is up or down. The value</font></i>
+<i><font color="#9A1900">     * returned will be either PEN_UP or PEN_DOWN.</font></i>
+<i><font color="#9A1900">     * </font></i>
+<i><font color="#9A1900">     * @return PEN_DOWN if this Turtle's pen is up or</font></i>
+<i><font color="#9A1900">     *         PEN_UP if this Turtle's pen is up.</font></i>
+<i><font color="#9A1900">     */</font></i>
+    <b><font color="#0000FF">public</font></b> <font color="#009900">boolean</font> <b><font color="#000000">getPenPosition</font></b><font color="#990000">(</font><font color="#990000">)</font> <font color="#FF0000">{</font>
+	<b><font color="#0000FF">return</font></b> penPosition<font color="#990000">;</font>
+    <font color="#FF0000">}</font>
+
+    <i><font color="#9A1900">/**</font></i>
+<i><font color="#9A1900">     * Get the x coordinate of this Turtle.</font></i>
+<i><font color="#9A1900">     *</font></i>
+<i><font color="#9A1900">     * @return the x coordinate of this Turtle.</font></i>
+<i><font color="#9A1900">     */</font></i>
+    <b><font color="#0000FF">public</font></b> <font color="#009900">int</font> <b><font color="#000000">getX</font></b><font color="#990000">(</font><font color="#990000">)</font> <font color="#FF0000">{</font>
+	<b><font color="#0000FF">return</font></b> x<font color="#990000">;</font>
+    <font color="#FF0000">}</font>
+
+    <i><font color="#9A1900">/**</font></i>
+<i><font color="#9A1900">     * Get the y coordinate of this Turtle.</font></i>
+<i><font color="#9A1900">     *</font></i>
+<i><font color="#9A1900">     * @return the y coordinate of this Turtle.</font></i>
+<i><font color="#9A1900">     */</font></i>
+    <b><font color="#0000FF">public</font></b> <font color="#009900">int</font> <b><font color="#000000">getY</font></b><font color="#990000">(</font><font color="#990000">)</font> <font color="#FF0000">{</font>
+	<b><font color="#0000FF">return</font></b> y<font color="#990000">;</font>
+    <font color="#FF0000">}</font>
+
+    <i><font color="#9A1900">/**</font></i>
+<i><font color="#9A1900">     * Get the color of this Turtle's pen. The color is </font></i>
+<i><font color="#9A1900">     * returned as a reference to a Color object.</font></i>
+<i><font color="#9A1900">     *</font></i>
+<i><font color="#9A1900">     * @return a reference to a Color object representing </font></i>
+<i><font color="#9A1900">     *         the Color of this Turtle's pen.</font></i>
+<i><font color="#9A1900">     */</font></i>
+    <b><font color="#0000FF">public</font></b> Color <b><font color="#000000">getColor</font></b><font color="#990000">(</font><font color="#990000">)</font> <font color="#FF0000">{</font>
+	<b><font color="#0000FF">return</font></b> penColor<font color="#990000">;</font>
+    <font color="#FF0000">}</font>
+
+    <i><font color="#9A1900">/**</font></i>
+<i><font color="#9A1900">     * Get the the angle to which this Turtle is turned.  </font></i>
+<i><font color="#9A1900">     * The angle of the Turtle is measured counter-clockwise</font></i>
+<i><font color="#9A1900">     * from horizontal.</font></i>
+<i><font color="#9A1900">     *</font></i>
+<i><font color="#9A1900">     * @return the angle to which this Turtle is turned. </font></i>
+<i><font color="#9A1900">     */</font></i>
+    <b><font color="#0000FF">public</font></b> <font color="#009900">int</font> <b><font color="#000000">getAngle</font></b><font color="#990000">(</font><font color="#990000">)</font> <font color="#FF0000">{</font>
+	<b><font color="#0000FF">return</font></b> angle<font color="#990000">;</font>
+    <font color="#FF0000">}</font>
+<font color="#FF0000">}</font>
+
+	
+</tt>
+</pre>
+<hr><br><a href="http://users.dickinson.edu/~braught/courses/cs132s03/code/Turtle.html">Turtle.java</a> : javadoc documentation.<br><br>
+<hr>
+<font size="-2">
+<script language="JavaScript">
+          <!---//hide script from old browsers
+          document.write( "This document was last updated "+ document.lastModified + "<br><br>" );
+          //end hiding contents --->
+          </script>This document was last updated Mon, 10 Feb 2003 04:00:00 GMT<br><br>
+</font>
+</body></html>
