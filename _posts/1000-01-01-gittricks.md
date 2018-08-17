@@ -49,6 +49,22 @@ git remote show origin
 git checkout webnotes
 ```
 
+Change old to new
+
+```
+git branch -m gh-pages gh-pages-beforebs
+git branch -m webnotes-bootstrap gh-pages
+git remote set-head origin gh-pages-beforebs
+```
+
+Set the Master branch to another on GitHub, then do
+
+```
+git push origin --delete gh-pages
+git push origin gh-pages
+git remote set-head origin gh-pages
+```
+
 ## Merge
 
 Update a branch then switch to another one
@@ -63,9 +79,10 @@ Merge all commits
 git merge origin/gh-pages
 ```
 
-Merge a particular file, not the whole instead
+Merge files or a particular file, not the whole instead
 ```
 git checkout gh-pages _sass/_base.scss
+git checkout gh-pages-beforebs _posts
 ```
 
 ## Push to Gerit
