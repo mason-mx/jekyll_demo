@@ -10,6 +10,13 @@ $(document).ready(function(){
 		$("#myFloatBar").css("width","0");
 	});
 
+	$("#BtnNight").click(function(){
+		$("body").css("background-color", "rgb(255, 255, 255)");
+		localStorage.setItem("bodyBackgroudColor", "rgb(255, 255, 255)");
+		$("#mySideBtn").animate({right	: '0'});
+		$("#myFloatBar").css("width","0");
+	});
+
 	$("#mySideBtn").click(function(){
 		$("#mySideBtn").animate({right: '110px'});
 		$("#myFloatBar").css("width","110px");
