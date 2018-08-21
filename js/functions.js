@@ -30,6 +30,20 @@ function scrollToDiv(element,navheight){
 	}, 500);
 }
 
+function askWeather() {
+    $.ajax('http://api.wunderground.com/api/c6dc8e785d943109/conditions/q/NZ/Auckland.json', {
+        dataType: 'jsonp',
+        success: function(json) {
+            console.log(json.current_observation.weather);
+          $('div#city strong').text(json.current_observation.display_location.full)
+          $('div#icon').html('<img src=' + json.current_observation.icon_url + '>')
+          $('div#weather').text(json.current_observation.temperature_string + " " + json.current_observation.weather);
+          $('div#time').text(json.current_observation.observation_time_rfc822);
+        }
+      });
+    
+}
+
 function emptyResultsContainer () {
     $("#results-container").empty();
 }

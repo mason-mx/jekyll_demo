@@ -2,6 +2,10 @@
 $(document).ready(function(){
 	JekyllSearch();
 
+	askWeather();
+	// call every 45 minutes
+	setInterval(askWeather, 2700000);
+
 	$("body").css("background-color", localStorage.getItem("bodyBackgroudColor"));
 	$("#BtnGreen").click(function(){
 		$("body").css("background-color", "rgb(219, 238, 221)");
