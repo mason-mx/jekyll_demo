@@ -31,7 +31,7 @@ function scrollToDiv(element,navheight){
 }
 
 function askWeather() {
-    $.ajax('http://api.wunderground.com/api/c6dc8e785d943109/conditions/q/NZ/Auckland.json', {
+    $.ajax('https://api.wunderground.com/api/c6dc8e785d943109/conditions/q/NZ/Auckland.json', {
         dataType: 'jsonp',
         success: function(json) {
             console.log(json.current_observation.weather);
