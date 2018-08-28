@@ -43,6 +43,22 @@ git reset --hard <commit-hash>
 git remote show origin
 ```
 
+## Patch
+
+Create patch file
+
+```
+git diff --no-prefix > [path file name]
+git diff > patch.diff
+```
+
+Apply path file
+
+```
+patch -p0 < [path file name]
+patch -p1 < patch.diff
+```
+
 ## Branch
 
 Switch to a certain local branch
