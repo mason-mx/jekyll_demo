@@ -45,8 +45,28 @@ git remote show origin
 
 ## Branch
 
+Switch to a certain local branch
+
 ```
 git checkout webnotes
+```
+
+Create a new local branch
+
+```
+git checkout -b feature_branch_name
+```
+
+Edit, add and commit your files. Then push your branch to the remote repository
+
+```
+git push -u origin feature_branch_name
+```
+
+Delete a local branch
+
+```
+git branch -d the_local_branch
 ```
 
 Change old to new
