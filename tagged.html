@@ -22,21 +22,25 @@ title: Tagged
 	{% endif %}
 {% endfor %}
 
-<div class="post-wrapper">
+<div class="container"> 
+	<div class="row">
 	<main role="main">
-		<div class="post-container">
+		<div>
 			{% for tag in tags %}
-			<h3 class="tag-title" id="{{ tag | slugify }}">> {{ tag }}</h3>
+			<div class="jumptarget" id="{{ tag | slugify }}">
+				<h4><span class="label label-info">{{ tag }}</span></h4>
+			</div>
 			<ul class="post-list">
 				{% for post in site.posts %}
-		    			{% if post.tags contains tag %}
+		    		{% if post.tags contains tag %}
 					<li>
 					<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
 					</li>
-				{% endif %}
+					{% endif %}
 		    	{% endfor %}
 			</ul>
 			{% endfor %}
 		</div>
 	</main>
+	</div>
 </div>

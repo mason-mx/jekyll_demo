@@ -1,7 +1,8 @@
 ---
 layout: default
 ---
-<div class="wrap">
+<div class="container"> 
+	<div class="row">
 	<main role="main">
 		<div class="post-container">
 			{% if page.img %}
@@ -16,19 +17,23 @@ layout: default
 			    </object>
 			</div>
 			{% else %}
-			<div class="post-content">
+			<div>
 				<article>
 					<header>
-						<h1 class="post-title">{{page.title}}</h1>
+						<h1>{{page.title}}</h1>
 						{% if page.author %}
 							<p>Posted by: {{page.author}}</p>
 						{% endif %}
 						{% if page.tags %}
-							<ul class="tags">
 							{% for tag in page.tags %}
-								<li class="tag"><a href="{{ site.baseurl }}/tagged#{{ tag | slugify }}"># {{ tag }}</a></li>
+								{% assign count = 0 %}
+								{% for post in site.posts %}
+									{% if post.tags contains tag %}
+										{% assign count=count | plus:1 %}
+									{% endif %}
+								{% endfor %}
+								<a href="{{ site.baseurl }}/tagged#{{ tag | slugify }}" class="btn btn-info btn-xs" role="button">{{ tag }} <span class="badge">{{ count }}</span></a>
 							{% endfor %}
-							</ul>
 						{% endif %}
 					</header>
 					<p>{{page.content | markdownify}}</p>
@@ -40,4 +45,5 @@ layout: default
 			{% endif %}
 		</div>
 	</main>
+	</div>
 </div>
