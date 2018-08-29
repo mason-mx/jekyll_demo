@@ -2,9 +2,9 @@
 $(document).ready(function(){
 	JekyllSearch();
 
-	askWeather();
+	//askWeather();
 	// call every 45 minutes
-	setInterval(askWeather, 2700000);
+	//setInterval(askWeather, 2700000);
 
 	$("body").css("background-color", localStorage.getItem("bodyBackgroudColor"));
 	$("#BtnGreen").click(function(){
@@ -48,6 +48,8 @@ $(document).ready(function(){
 	$('#homeMenu').click(function(){
 		$("#mySidenav").css("width","180px");
 	});
+
+	$( "#myFloatWeather" ).weather();
 /*
 	$(window).scroll(function(e){
 		//获取要定位元素距离浏览器顶部的距离
