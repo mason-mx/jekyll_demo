@@ -45,6 +45,12 @@ git remote show origin
 
 ## Patch
 
+Compare files from two different branches
+
+```
+git diff mybranch master -- myfile
+```
+
 Create patch file
 
 ```
