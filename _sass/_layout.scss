@@ -3,7 +3,6 @@
  */
 
 body {
-	padding-top: $top-navbar-height;
 	padding-bottom: $bottom-navbar-height;
 }
 
@@ -167,7 +166,28 @@ div.category-head {
 	display:block;
 	height:60px; /* fixed header height*/
 	margin:-60px 0 0; /* negative fixed header height */
-  }
+}
+
+.header {
+	background-color: #f1f1f1;
+	padding: 30px;
+	text-align: center;
+}
+
+#postContent {
+	padding-top: $top-navbar-height;
+}
+
+#pageContent {
+	padding-top: $top-navbar-height;
+}
+
+.sticky {
+	position: fixed;
+	z-index: 9999;
+	top: 0;
+	width: 100%;
+}
 
 /////////////////////////////
 

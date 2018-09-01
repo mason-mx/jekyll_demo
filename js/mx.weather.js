@@ -21,7 +21,7 @@
 
             o.citysDict = {
                 "Auckland":   "NZ",
-                "Willington": "NZ"
+                "Wellington": "NZ"
             };
 
             $("<div></div>")
@@ -45,7 +45,7 @@
                 right: 0
             });
 
-
+            this._createInterval();
             this._fetchWeather(this._constrain(o.city));
                      
             $(window).resize(function(){
@@ -65,6 +65,7 @@
         // create a public method
         city: function(value) {
             // no value passed, act as a getter
+            console.log("city functions" + value);
             if (value === undefined) {
                 return this.options.city;
             // value passed, act as a setter
@@ -85,6 +86,12 @@
                 value = dict[city] + "/" + city;
             }
             return value;
+        },
+
+        
+        _createInterval: function() {
+            var self = this, o = self.options;
+            setInterval(function(){ self._fetchWeather(self._constrain(o.city)); }, 1800000);
         },
 
         // create a private method
@@ -124,22 +131,22 @@
              }
         },
 
-        _setOption: function(option, value) {
+        _setOption: function(key, value) {
             $.Widget.prototype._setOption.apply( this, arguments );
-         
-            var el = this.element,
-                cap = el.next(),
-                capHeight = cap.outerHeight() - parseInt(cap.css("paddingTop")) + parseInt(cap.css("paddingBottom"));
+            console.log("_setOption" + value);
+            var el = this.element;
+            var o = this.options;
                      
-            switch (option) {
-                case "location":
-                    (value === "top") ? cap.css("top", el.offset().top) : cap.css("top", el.offset().top + el.height() - capHeight);
+            switch (key) {
+                case "city":
+                    o.city = value;
+                    //this._fetchWeather(this._constrain(value));
                     break;
                 case "color":
-                    el.next().css("color", value);
+                    el.css("color", value);
                     break;
                 case "backgroundColor":
-                    el.next().css("backgroundColor", value);
+                    el.css("background-color", value);
                     break;
             }
         }
