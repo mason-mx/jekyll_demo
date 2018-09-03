@@ -29,6 +29,8 @@ git show commitID
 git remote add origin ssh://git@10.5.20.16:/home/git/bigdata/deploy.git
 git push origin master
 git pull
+git pull origin FixForBug
+git push origin FixForBug
 ```
 
 ## Get specific version by a commit ID
