@@ -2,6 +2,7 @@
 layout: default
 title: Tagged
 ---
+{% include header.html %}
 
 {% assign rawtags = "" %}
 {% for post in site.posts %}
@@ -22,7 +23,7 @@ title: Tagged
 	{% endif %}
 {% endfor %}
 
-<div class="container"> 
+<div id="taggedContent" class="container"> 
 	<div class="row">
 	<main role="main">
 		<div>

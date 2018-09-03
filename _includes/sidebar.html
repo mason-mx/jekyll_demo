@@ -1,0 +1,9 @@
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closeBtn">&times;</a>
+    {% assign counter=0 %}
+    {% for category in site.categories %}
+        {% assign counter=counter | plus:1 %}
+        {% capture category_name %}{{ category | first }}{% endcapture %}
+        <a href="#category-{{ counter }}" class="catagories">{{ category_name | capitalize }}</a>
+    {% endfor %}
+</div>

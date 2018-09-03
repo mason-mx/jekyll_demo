@@ -2,10 +2,6 @@
 $(document).ready(function(){
 	JekyllSearch();
 
-	askWeather();
-	// call every 45 minutes
-	setInterval(askWeather, 2700000);
-
 	$("body").css("background-color", localStorage.getItem("bodyBackgroudColor"));
 	$("#BtnGreen").click(function(){
 		$("body").css("background-color", "rgb(219, 238, 221)");
@@ -48,6 +44,28 @@ $(document).ready(function(){
 	$('#homeMenu').click(function(){
 		$("#mySidenav").css("width","180px");
 	});
+
+	var navbar = $("#topNavgation");
+	if(navbar.length)
+	{
+		var offset = navbar.offset();
+		var sticky = offset.top;
+		$( window ).scroll(function() {
+			if (window.pageYOffset >= sticky) {
+				navbar.addClass("sticky");
+				//$( "#indexContent" ).css( "padding-top", "50px" );
+			} else {
+				navbar.removeClass("sticky");
+				//$( "#indexContent" ).css( "padding-top", 0 );
+			}
+		});
+	}
+	
+
+	var weather = $("#myFloatWeather").weather();
+	//weather.weather("option", "city", "Wellington");
+	//weather.weather("option", "color", "MediumSeaGreen");
+	//weather.weather("option", "backgroundColor", "Tomato");
 /*
 	$(window).scroll(function(e){
 		//获取要定位元素距离浏览器顶部的距离
