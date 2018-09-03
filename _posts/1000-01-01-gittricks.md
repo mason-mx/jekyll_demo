@@ -43,10 +43,52 @@ git reset --hard <commit-hash>
 git remote show origin
 ```
 
+## Patch
+
+Compare files from two different branches
+
+```
+git diff mybranch master -- myfile
+```
+
+Create patch file
+
+```
+git diff --no-prefix > [path file name]
+git diff > patch.diff
+```
+
+Apply path file
+
+```
+patch -p0 < [path file name]
+patch -p1 < patch.diff
+```
+
 ## Branch
+
+Switch to a certain local branch
 
 ```
 git checkout webnotes
+```
+
+Create a new local branch
+
+```
+git checkout -b feature_branch_name
+```
+
+Edit, add and commit your files. Then push your branch to the remote repository
+
+```
+git push -u origin feature_branch_name
+```
+
+Delete a local branch
+
+```
+git branch -d the_local_branch
 ```
 
 Change old to new
