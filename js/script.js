@@ -53,10 +53,10 @@ $(document).ready(function(){
 		$( window ).scroll(function() {
 			if (window.pageYOffset >= sticky) {
 				navbar.addClass("sticky");
-				//$( "body" ).css( "padding-bottom", "60px" );
+				//$( "#indexContent" ).css( "padding-top", "50px" );
 			} else {
 				navbar.removeClass("sticky");
-				//$( "body" ).css( "padding-bottom", 0 );
+				//$( "#indexContent" ).css( "padding-top", 0 );
 			}
 		});
 	}

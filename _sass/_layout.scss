@@ -10,7 +10,7 @@ body {
 	margin: 0;
 	padding: 0;
 	position: absolute;
-	right: $social-right;
+	left: $social-right;
 	top: $social-top;
 }
 
@@ -149,7 +149,7 @@ div.category-head {
 	position: -webkit-sticky;
 	position: sticky;
 	padding: 0 0 0 0;
-	top: 60px;
+	top: $top-navbar-height;
 	background-color: #F8F8F8;
 	border-bottom: 3px solid #4CAF50;
 	//border: 2px solid #4CAF50;
@@ -179,6 +179,10 @@ div.category-head {
 	padding-top: $top-navbar-height;
 }
 
+#taggedContent {
+	padding-top: $top-navbar-height;
+}
+
 #pageContent {
 	padding-top: $top-navbar-height;
 }
@@ -188,6 +192,14 @@ div.category-head {
 	z-index: 9999;
 	top: 0;
 	width: 100%;
+}
+
+#results-container {
+	margin-bottom: 0;
+}
+
+.navbar {
+	margin-bottom: 0;
 }
 
 /////////////////////////////

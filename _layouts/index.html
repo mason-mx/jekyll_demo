@@ -1,41 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-{% include head.html %}
-<body>
-	<div id="mySidenav" class="sidenav">
-		<a href="javascript:void(0)" class="closeBtn">&times;</a>
-		{% assign counter=0 %}
-		{% for category in site.categories %}
-			{% assign counter=counter | plus:1 %}
-			{% capture category_name %}{{ category | first }}{% endcapture %}
-			<a href="#category-{{ counter }}" class="catagories">{{ category_name | capitalize }}</a>
-		{% endfor %}
-	</div>
-	<div id="myFloatBar" class="floatBar">	
-		<a href="javascript:void(0)" class="closeBtn">&times;</a>
-		<div class="container">      
-			<div>
-				<button id="BtnGreen" type="button" style="background:rgb(219, 238, 221); padding:18px 18px"></button>
-				<button id="BtnNight"type="button" style="background:rgb(53, 52, 54); padding:18px 18px"></button>
-			</div>
-		</div>
-	</div>
-	<div id="mySideBtn" class="sideBtn">
-		<span class="glyphicon glyphicon-cog" style="font-size:20px"></span></a>
-	</div>
-	<div id="myFloatWeather"></div>
-	{% include header_stickyNav.html %}
-	{{ content }}
-	{% include footer.html %}
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
-	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-	crossorigin="anonymous"></script>
-	<script
-	src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-	integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-	crossorigin="anonymous"></script>
-	<script src="{{ "/js/mx.weather.js" | prepend: site.baseurl }}"></script>
-	<script src="{{ "/js/functions.js" | prepend: site.baseurl }}"></script>
-	<script src="{{ "/js/script.js" | prepend: site.baseurl }}"></script>
-</body>
-</html>
+---
+layout: default
+---
+{% include header_stickyNav.html %}
+{{ content }}
