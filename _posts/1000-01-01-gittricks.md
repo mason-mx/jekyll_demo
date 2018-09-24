@@ -109,6 +109,12 @@ git push origin gh-pages
 git remote set-head origin gh-pages
 ```
 
+To update the local list of remote branches:
+
+```
+git remote update origin --prune
+```
+
 ## Merge
 
 Update a branch then switch to another one
