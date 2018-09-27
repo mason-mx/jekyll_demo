@@ -8,11 +8,12 @@ author: Mason
 
 # 把英语用起来
 
-http://soundsofspeech.uiowa.edu/ 爱荷华大学的口腔剖面
+[爱荷华大学的口腔剖面](http://soundsofspeech.uiowa.edu/)
 
 ## Audiobook
 
-* for (baidu yun: （sfi-fi 100还没有保存到自己的云）最新链接：http://pan.baidu.com/s/1jGBRXH0 密码：x57t)
+for (baidu yun: （sfi-fi 100还没有保存到自己的云）[最新链接](http://pan.baidu.com/s/1jGBRXH0) 密码：x57t)
+
 * 'Never Let Me Go' 'Pride and Prejudice' by Emilia Fox
 * 'Where the Mountain Meets the Moon'
 * 'Happy Prince'
@@ -78,15 +79,15 @@ http://soundsofspeech.uiowa.edu/ 爱荷华大学的口腔剖面
 
 ## 附录2.3全球主流英文媒体
 
-* [美国CNN电视台](http://edition.cnn.com/audio/radio/cnntv.html) ([节目表](www.cnn.com/cnn/programs/?hpt=hp_tvvideo;hpt=hp_livenow)
+* [美国CNN电视台](http://edition.cnn.com/audio/radio/cnntv.html) ([节目表](www.cnn.com/cnn/programs/?hpt=hp_tvvideo;hpt=hp_livenow))
 * [美国VOA电台](www.voanews.com/wm/live/newsnow.asx)
 * [美国NPR](www.npr.org/audiohelp/progstream.html)
 * [美国FOX](http://affiliates.foxnewsradio.com/radio/player.html)
-* [英国BBC](www.bbc.co.uk/radio/player/bbc_radio_one) ([节目表](www.bbc.co.uk/radio1/programmes/schedules/england)
-* [BBC2](www.bbc.co.uk/radio/player/bbc_radio_two) ([节目表](www.bbc.co.uk/radio2/programmes/schedules)
-* [BBC4](www.bbc.co.uk/radio/player/bbc_radio_four) ([节目表](www.bbc.co.uk/radio4/programmes/schedules/fm)
-* [BBC World Service](www.bbc.co.uk/radio/player/bbc_world_service) ([节目表](www.bbc.co.uk/worldserviceradio/programmes/schedules)
-* [澳大利亚ABC National](www.abc.net.au/rn/legacy/player.htm) ([节目表](www.abc.net.au/radionational)
+* [英国BBC](www.bbc.co.uk/radio/player/bbc_radio_one) ([节目表](www.bbc.co.uk/radio1/programmes/schedules/england))
+* [BBC2](www.bbc.co.uk/radio/player/bbc_radio_two) ([节目表](www.bbc.co.uk/radio2/programmes/schedules))
+* [BBC4](www.bbc.co.uk/radio/player/bbc_radio_four) ([节目表](www.bbc.co.uk/radio4/programmes/schedules/fm))
+* [BBC World Service](www.bbc.co.uk/radio/player/bbc_world_service) ([节目表](www.bbc.co.uk/worldserviceradio/programmes/schedules))
+* [澳大利亚ABC National](www.abc.net.au/rn/legacy/player.htm) ([节目表](www.abc.net.au/radionational))
 * [ABC News Radio](www.abc.net.au/newsradio/audio/streaming.htm) ([节目表](www.abc.net.au/newsradio/schedule/onair.htm))
 
 Sticher App
