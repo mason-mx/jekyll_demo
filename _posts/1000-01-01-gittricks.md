@@ -33,6 +33,67 @@ git pull origin FixForBug
 git push origin FixForBug
 ```
 
+## Tag
+
+```
+rm -rf my-submodule
+git submodule update --init --recursive
+cd my-submodule
+git checkout $TAG-OF-SUBMODULE
+cd ..
+git diff
+```
+
+```
+-Subproject commit ce83a24123592d41e80ea1b9436fb0ce67ead08b
++Subproject commit fc5afc6591b824c0477264daca9e60ac2fadb10f
+```
+
+```
+git commit -m "Release version: 2.00.02"
+git push
+git tag MTP-WEB-2.00.02
+git push origin MTP-WEB-2.00.02
+```
+
+## Git stash
+
+* git stash: 备份当前的工作区的内容，从最近的一次提交中读取相关内容，让工作区保证和上次提交的内容一致。同时，将当前的工作区内容保存到Git栈中。
+* git stash pop: 从Git栈中读取最近一次保存的内容，恢复工作区的相关内容。由于可能存在多个Stash的内容，所以用栈来管理，pop会从最近的一个stash中读取内容并恢复。
+* git stash list: 显示Git栈内的所有备份，可以利用这个列表来决定从那个地方恢复。
+* git stash clear: 清空Git栈。此时使用gitg等图形化工具会发现，原来stash的哪些节点都消失了。
+
+* 储藏
+
+当你正在做一项复杂的工作时, 发现了一个和当前工作不相关但是又很讨厌的bug. 你这时想先修复bug再做手头的工作, 那么就可以用`git stash`来保存当前的工作状态, 等你修复完bug后,执行反储藏(unstash)操作就可以回到之前的工作里.
+
+```
+$ git stash "work in progress for foo feature"
+```
+
+上面这条命令会保存你的本地修改到储藏(stash)中, 然后将你的工作目录和索引里的内容全部重置, 回到你当前所在分支的上次提交时的状态.
+
+好了, 你现在就可以开始你的修复工作了.
+
+```
+... edit and test ...
+$ git commit -a -m "blorpl: typofix"
+```
+
+当你修复完bug后, 你可以用`git stash apply`来回复到以前的工作状态.
+
+* 储藏队列
+
+你也可多次使用`git stash`命令,　每执行一次就会把针对当前修改的储藏(stash)添加到储藏队列中. 用`git stash list`命令可以查看你保存的储藏(stashes):
+
+```
+$>git stash list
+stash@{0}: WIP on book: 51bea1d... fixed images
+stash@{1}: WIP on master: 9705ae6... changed the browse code to the official repo123
+```
+
+可以用类似`git stash apply stash@{1}`的命令来使用在队列中的任意一个储藏(stashes). `git stash clear`则是用来清空这个队列.
+
 ## Get specific version by a commit ID
 
 ```
@@ -107,6 +168,12 @@ Set the Master branch to another on GitHub, then do
 git push origin --delete gh-pages
 git push origin gh-pages
 git remote set-head origin gh-pages
+```
+
+To update the local list of remote branches:
+
+```
+git remote update origin --prune
 ```
 
 ## Merge
