@@ -31,6 +31,7 @@ git push origin master
 git pull
 git pull origin FixForBug
 git push origin FixForBug
+git diff HEAD (for the staged files)
 ```
 
 ## Tag
