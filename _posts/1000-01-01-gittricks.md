@@ -214,6 +214,18 @@ git push origin HEAD:refs/for/master
 git reset --hard HEAD~1
 ```
 
+## Remove files from Git commit
+
+```
+git reset --soft HEAD~1
+```
+
+Then reset the unwanted files in order to leave them out from the commit:
+
+```
+git reset HEAD path/to/unwanted_file
+```
+
 Be cautious about doing this, since all your changes will be abandoned. So, please backup useful files in advance.
 
 ## Restore Deleted Files In Git
