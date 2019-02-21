@@ -34,6 +34,30 @@ git push origin FixForBug
 git diff HEAD (for the staged files)
 ```
 
+## How do I include Git commit hash in managed source code?
+
+```
+git rev-parse --verify HEAD (getting the full SHA1)
+git rev-parse --short HEAD
+```
+
+In PHP and other common languages, this would be done using the backtick operator.
+
+```
+<footer>
+Version <?php echo `git rev-parse --verify HEAD`; ?>
+</footer>
+```
+
+```
+$ git describe --tags
+v0.0.5-1-g1ef24e5
+
+# v0.0.5  -- the last recent tag
+# 1 -- number of commits done since that tag
+# g1ef24e5 -- the SHA1 hash of the current commit
+```
+
 ## Tag
 
 ```
