@@ -60,6 +60,24 @@ v0.0.5-1-g1ef24e5
 
 ## Tag
 
+### Checkout remote tag
+
+First, make sure that the tag exists locally by doing
+
+```
+# --all will fetch all the remotes.
+# --tags will fetch all tags as well
+git fetch --all --tags --prune
+```
+
+Then check out the tag by running
+
+```
+git checkout tags/<tag_name> -b <branch_name>
+```
+
+### Add a tag
+
 ```
 rm -rf my-submodule
 git submodule update --init --recursive
