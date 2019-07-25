@@ -1,6 +1,6 @@
 # Site settings
 title: Web Notes
-baseurl: /jekyll_demo
+baseurl: /webnotes
 url: "" # default is empty
 author: "Mason"
 
