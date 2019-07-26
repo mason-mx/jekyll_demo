@@ -50,7 +50,7 @@ function emptyResultsContainer () {
 
 function JekyllSearch(){
     var items = [];
-    $.getJSON( "/jekyll_demo/search.json", function( data ) {
+    $.getJSON( "/webnotes/search.json", function( data ) {
         $.each( data, function( key, val ) {
             items.push( "<li><a href='" + val.url + "'>" +val.title + "</a></li>" );
             //$.each( val, function( key2, val2 ) {
