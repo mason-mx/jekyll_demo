@@ -162,11 +162,13 @@ Create patch file
 ```
 git diff --no-prefix > [path file name]
 git diff > patch.diff
+git diff mybranch master > diff.patch
 ```
 
 Apply path file
 
 ```
+git apply diff.patch
 patch -p0 < [path file name]
 patch -p1 < patch.diff
 ```
