@@ -34,6 +34,18 @@ git push origin FixForBug
 git diff HEAD (for the staged files)
 ```
 
+## Git config
+
+```
+git config --global user.name
+git config --global user.email
+```
+
+```
+git config --local user.name xxx
+git config --local user.email xxx@example.com
+```
+
 ## How do I include Git commit hash in managed source code?
 
 ```
@@ -97,6 +109,20 @@ git commit -m "Release version: 2.00.02"
 git push
 git tag MTP-WEB-2.00.02
 git push origin MTP-WEB-2.00.02
+```
+
+### Delete a tags
+
+To remove the tag from the remote repository:
+
+```
+git push --delete origin TAGNAME
+```
+
+You may also want to delete the tag locally:
+
+```
+git tag -d TAGNAME
 ```
 
 ## Git stash
