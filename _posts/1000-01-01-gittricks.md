@@ -174,6 +174,13 @@ git reset --hard <commit-hash>
 
 ```
 git remote show origin
+git remote -v
+```
+
+## Change the remote's URL
+
+```
+git remote set-url origin https://github.com/USERNAME/REPOSITORY.git
 ```
 
 ## Patch
